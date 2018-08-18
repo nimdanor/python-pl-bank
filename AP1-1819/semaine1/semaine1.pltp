@@ -51,7 +51,7 @@ Dans les exercices suivants vous allez donc
     / division, // division entière, % modulo, 
 
 Pour les comparaisons :
-    == égalité, >= supérieur ou égal, < inférieur,  ou égal
+    = = égalité, >= supérieur ou égal, < inférieur,  ou égal
     =! différent, > supérieur, <= inférieur ou égal
 
 Remarque: le simple = est reservé à l'opération d'affectation (association d'un nom avec une valeur).
@@ -68,9 +68,13 @@ Les exercices sont aléatoires mais ont une difficulté variable qui est prise e
 
 # ici vous placer les exercices dans l'ordre ou vous souhaiter les voir apparaitres
 # références absolues 
-concept==
-@ /concept/variable/valeur.pl
-@ /concept/variable/variable001.pl
-@ /concept/variable/variable002.pl
-@ /concept/variable/variable003.pl
-==
+
+@ concept/variable/valeur.pl
+@ concept/variable/variable001.pl
+@ concept/variable/variable002.pl
+@ concept/variable/variable003.pl
+
+
+
+
+
