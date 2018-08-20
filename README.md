@@ -12,19 +12,15 @@ Version stable (acces anonyme):
 
 	git clone https://github.com/plgitlogin/premierlangage.git
 
-Version de dev :
 
-	git clone https;//git-etud.u-pem.fr/premierlangage.git
-	Pour accèder il faut un compte sur la plateforme étudiant.	
+Lire et réaliser les explications et commandes du fichier **install.md**
 
-Lire et réaliser les explications et commandes du fichier install.md
-
-## localisation et download  de pybank
+## localisation et download  de python-pl-bank
 
 
 Placez vous dans le reptoire **repo** de votre installation pl
 
-	git clone https://git-etud.u-pem.fr/pybank.git
+	git clone https://github.com/nimdanor/python-pl-bank/
 
 Pour accèder il faut un compte sur la plateforme étudiant.	
 
@@ -32,5 +28,5 @@ Pour accèder il faut un compte sur la plateforme étudiant.
 
 Vous pouvez commencer à écrire des exercices et des feuilles d'exercice.
 
-Voire le fichier howto.md
+Voire le fichier **howto.md**
 
