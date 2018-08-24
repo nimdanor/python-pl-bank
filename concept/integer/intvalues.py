@@ -62,8 +62,8 @@ def check(string, value, base = 10 ):
             else:
                 if sbase == base :
                     return False, "la base est bien " + basename(base) + " mais la valeur en base decimale "+ str(rvalue) + " est incorrecte"
-
-
+                else:
+                    return False, " je ne sais pas quoi faire de votre reponse "
 
 
 
