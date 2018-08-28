@@ -4,6 +4,9 @@
 
 # oneshot=True
 
+tag=constants|integer|base
+
+
 title= Constantes entiere
 
 before=@ intvalues.py
