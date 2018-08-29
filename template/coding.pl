@@ -1,11 +1,24 @@
 
 
-# Vous pouvez remarque deux choses 
+# Template d'exercice de programmation python
 
-# l'inclusion de template et récursive 
-# et il est possible de fair référence à un autre repository (qui doit biensur être présent pour que cela fonctionne)
+grader==
+from plgrader import Grader
+print(Grader().grade())
+==
 
-# la syntaxe est   nomdurepo : référence absolu dans le repo
+@ /pysrc/src/__init__.py
+@/pysrc/src/plgrader.py
+@/pysrc/src/feedback.py
+@/pysrc/src/plutils.py
+@/pysrc/src/pldoctest.py
+@/pysrc/src/template.html
 
 
-template=plbank:/python/0PLG/template.pl
+
+
+
+# une interface standard d'exercice avec un editeur pour la réponse
+form=@ /python/form/editorform.html
+
+
