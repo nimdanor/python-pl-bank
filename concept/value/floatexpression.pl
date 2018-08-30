@@ -10,7 +10,9 @@ form==
 ==
 ## temporaire couper ici
 
-title= Un calcul en Flotant (float)
+tag=float|const|expression
+
+title= Un calcul de change en Flotant (float)
 
 before==
 import random
@@ -41,10 +43,9 @@ Ecrivez l'expression qu'il faut ecrire ou directement le resultat.
 """.format(cur2)
 
 text += '''
-<SMALL>
+
 Remarque si souhaitez connaitre le nom en francais de ces monaies je vous propose la page suivante:
-<a href="https://fr.wikipedia.org/wiki/Liste_des_monnaies_en_circulation" target="_blank">wikipedia : Liste_des_monnaies_en_circulation</a>
-</SMALL>
+[wikipedia](https://fr.wikipedia.org/wiki/Liste_des_monnaies_en_circulation" target="_blank")
 '''
 
 res= 1000/rates[cur1]*rates[cur2]
@@ -65,5 +66,9 @@ except:
 if ret == res:
     grade = True, " joli calcul !!\n soit "+str(res)+" "+cur2+" soit "+str(myround(1000/rates[cur1]))+" euros !"
 else:
-    grade = False, " le calcul doit exact a 7 decimales !! attendu "+str(res)+" recu "+str(ret)
+    if res > ret:
+        grade = False, " le calcul doit exact a 7 decimales !! et c'est plus grand "
+    else:
+        grade = False, " le calcul doit exact a 7 decimales !! et c'est plus petit "
 ==
+
