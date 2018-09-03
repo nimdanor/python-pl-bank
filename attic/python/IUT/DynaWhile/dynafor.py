@@ -103,6 +103,7 @@ def build(dic):
 
 if __name__=="__main__":
     d=dict()
+    d['seed']=randint(1,1000)
     d['jinjatext']="""
 
 # Evaluer une suite d'instructions 

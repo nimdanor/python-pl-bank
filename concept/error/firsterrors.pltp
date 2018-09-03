@@ -9,7 +9,7 @@ Introduction aux erreur de compilation.
 ==
 
 title==
-Les erreurs de base que détecte le langage.
+Comprendre les erreurs de compilation
 ==
 
 
@@ -17,12 +17,6 @@ Les erreurs de base que détecte le langage.
 @ corrigemoi_2.pl
 @ corrigemoi_3.pl
 @ corrigemoi_4.pl
-
-
-@ /python/AP1/TP1/corrigemoi_5.pl
-@ /python/AP1/TP1/corrigemoi_6.pl
-@ /python/AP1/TP1/corrigemoi_7.pl
-
-
-
-
+@ corrigemoi_5.pl
+@ corrigemoi_6.pl
+@ corrigemoi_7.pl

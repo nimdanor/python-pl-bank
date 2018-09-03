@@ -8,7 +8,7 @@ La question est quelle est la valeur de la variable p a la fin de la suite d'ins
 
 ==
 
-
+tag=operator_**|expression
 
 before==
 

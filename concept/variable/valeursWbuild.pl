@@ -20,9 +20,6 @@ pltest==
 True
 ==
 
-template=/template/coding.pl
-
-
-
+template=/template/debugcoding.pl
 
 

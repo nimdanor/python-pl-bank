@@ -8,8 +8,3 @@ form==
 </div>
 ==
 
-
-evaluator==
-
-grade=False," Excercice incorrect de defini pas d'evaluateur"
-==

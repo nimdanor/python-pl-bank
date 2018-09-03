@@ -7,7 +7,7 @@ from plgrader import Grader
 print(Grader().grade())
 ==
 
-@ /pysrc/src/__init__.py
+@/pysrc/src/__init__.py
 @/pysrc/src/plgrader.py
 @/pysrc/src/feedback.py
 @/pysrc/src/plutils.py
