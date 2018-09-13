@@ -47,12 +47,14 @@ form==
 ==
 
 evaluator==
-
-if int(response['answer']) == res:
+if not response['answer']:
+    grade= False," Repondez quelque chose !"
+elif int(response['answer']) == res:
     grade = True," Bien jouer ! "+str(res)
 else:
     grade = False," Essai encore "
 ==
+
 
 
 

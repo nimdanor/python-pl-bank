@@ -2,7 +2,7 @@ title=Calcul Mystere III
 
 
 text==
-La variable a est initialise avec la valeur 2.
+La variable a est initialise avec la valeur {{a}}.
 
 La question est quelle est la valeur de la variable p a la fin de la suite d'instructions suivante:
 
@@ -18,9 +18,9 @@ before==
 import random
 
 random.seed(seed)
+a=random.randint(2,7)
+formula="    a = {}\n    p = a * a\n".format(a)
 
-formula="    a = 2\n    p = a * a\n"
-a=2
 p=a*a
 for x in range(0,random.randint(2,4)):
     r=random.randint(0,10)
@@ -66,6 +66,7 @@ else:
             grade= False, " Formule Incorrecte"
 
 ==
+
 
 
 

@@ -11,10 +11,12 @@ Ecrire un programme qui demande à l’utilisateur trois entiers a,b et c par ex
 	14
 	17
 
-Et qui utilise un seul test if et affiche oui si 
+Et qui utilise un seul test if et affiche **OUI** si
 	a > 12 et b >12
 	ou bien si
 	 c <20
+Sinon affiche **NON**
+
 ==
 
 
@@ -41,14 +43,10 @@ soluce==
 a=int(input())
 b=int(input())
 c=int(input())
-if (a < b) or c <20:
-	forma="%d est plus grand que %d" 
-elif a < b :
-	forma="%d est plus petit que %d" 
+if (a<12 and b <12) or c<20 :
+    print("NON")
 else:
-	forma="%d est égal à %d" 
-
-print(forma % (a,b))`
+    print("OUI")
 ==
 
 

@@ -10,12 +10,12 @@ Ecrire un programme qui demande à l’utilisateur deux entiers a et b par exemp
 	3
 	4
 
-Et qui affiche
-	a plus grand que b
-ou
-	a plus petit que b
-ou
-	a est égal à b
+Et qui affiche  
+	a plus grand que b  
+ou  
+	a plus petit que b  
+ou  
+	a est égal à b  
 
 Dans l'exemple cela affiche :
 
@@ -52,3 +52,4 @@ else:
 
 print(forma % (a,b))
 ==
+

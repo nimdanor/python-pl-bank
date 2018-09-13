@@ -1,29 +1,23 @@
 
 # Littéraux et types
 
-Nous utilisons dans la vie de tout les jours de nombreux littéraux:
+Nous utilisons dans la vie de tout les jours de nombreux littéraux:  
 3, "demain", 15h30, "Mille-Feuilles".
 
 A la boulangerie nous échangeons avec la boulangère:
+    - Je voudrais réserver *3* *Mille-Feuilles* pour *demain*.
+    - *Oui*. Ils seront près à *15h30*.
 
-<span style="color:blue;background-color: white;">
-- Je voudrais réserver *3* *Mille-Feuilles* pour *demain*.
-- *Oui*. Ils seront près à *15h30*.
-</span>
 
-Si nous regardons ces différentes littéraux nous constatons qu'ils ne sont pas échangeables dans la phrase.
-
-<span style="color:blue;background-color: white;">
-- Je voudrais réserver *15h30* *demain* pour *Oui* .
-- *3*. Ils seront près à *Mille-Feuilles*.
-</span>
+Si nous regardons ces différentes littéraux nous constatons qu'ils ne sont pas échangeables dans la phrase.  
+    - Je voudrais réserver *15h30* *demain* pour *Oui* .
+    - *3*. Ils seront près à *Mille-Feuilles*.
 
 Mais il est possible de les changer en les remplacant par une autre constante (littérale) du **MEME TYPE** pour avoir quelque chose de mieux.
 
-<span style="color:blue;background-color: white;">
-- Je voudrais réserver *10* *Charlottes-aux-poires* pour *Lundi*.
-- *Non*.  Désolé nous somme fermés *Lundi*.
-</span>
+    - Je voudrais réserver *10* *Charlottes-aux-poires* pour *Lundi*.
+    - *Non*.  Désolé nous somme fermés *Lundi*.
+
 
 Le **type** de ces constantes est soit un jour *Lundi*, soit un nom de gateau *Charlottes-aux-poires* soit un nombre entier *10* soit une heure *7h57* etc.
 
@@ -72,3 +66,4 @@ La création d'une variable se fait au moment de l'association initiale.
 	...
 	NameError: name 'a' is not defined
 	>>> 
+

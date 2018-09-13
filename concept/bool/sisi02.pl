@@ -1,11 +1,10 @@
 # Copyright 2017 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz 
 name=sisi002.pl
-title= Si  Sinon  
+title= Si Sinon
 tag= input|else|if|elif
 template=/python/0PLG/soluce.pl
 text==
-## IF ELIF ELSE
 Ecrire un programme qui demande à l’utilisateur un entier grace au texte:
 	Saisissez un entier?
 
@@ -18,8 +17,6 @@ Sinon si l'entier est **négatif** affiche
 Sinon affiche
 	Nul.
 ==
-
-
 
 
 input0=0

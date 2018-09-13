@@ -5,7 +5,7 @@ title= Variables et Types
 tag= int|str|type|litteral|variable
 
 # je ne suis pas sur d'avoir besoin de ca FIXME
-template=home/lib:/python/0PLG/template
+template=/python/0PLG/template.pl
 
 # presentation des variables
 text=@ presvar.md
@@ -13,12 +13,11 @@ text=@ presvar.md
 text+=
 
 # Enonce
-Exercice : définisez une variable **entier** entière c'est à dire de type &gt;class int&lt;.
+Exercice : définisez une variable **entier** entière c'est à dire de type &lt;class "int"&gt;.
 
-Une variable **bob** réelle de type &gt;class float&lt;.
+Une variable **bob** réelle de type &lt;class "float"&gt;.
 
-Une variable **nom** contenant une chaine de caractère c-à-d  de type &gt;class str&lt;.
-
+Une variable **nom** contenant une chaine de caractère c-à-d  de type  &lt;class "str"&gt;.
 
 ==
 code==
@@ -74,4 +73,5 @@ entier=123
 bob=5.5
 nom="jkh"
 ==
+
 

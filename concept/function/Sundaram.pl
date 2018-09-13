@@ -11,21 +11,25 @@ Découvert en 1934 par le Mathématicien Indien S.P. Sundaram ce crible permet d
 
 On cherche les nombre premiers inférieurs à une certaine valeur n.
 
-Trois étapes:
-1) créez une liste d'entiers de 1 à n. Ecrivez la fonction **createlist** qui retourne cette liste.
+Trois étapes:  
+1) créez une liste d'entiers de 1 à n. Ecrivez la fonction **createlist** qui retourne cette liste.  
+```
+    >>> createlist(5)
+    [1, 2, 3, 4, 5]
+```
 
-	>>> createlist(5)
-	[1, 2, 3, 4, 5]
+2) Eliminer de la liste tout les entiers de la forme $%i+j+2ij%$ ou $%0<i<=j<=n%$.
+Créez une fonction **crible1** qui prend une liste en parametre et qui fait cette élimination.    
+```
+    >>> crible1([1,2,3,4,5,6,7,8])
+    [1, 2, 3, 5, 6, 8]
+```
 
-2) Eliminer de la liste tout les entiers de la forme i+j+2ij ou 0<i<=j<=n . Créez une fonction **crible1** qui prend une liste en parametre et qui fait cette élimination.
-
-	>>> crible1([1,2,3,4,5,6,7,8])
-	[1, 2, 3, 5, 6, 8]
-
-3) Ecrire une fonction **crible2** qui prend en parametre une liste et qui retourne une liste ou tout les entiers de la liste ont été transformés par la formule 2i+1 :
-
+3) Ecrire une fonction **crible2** qui prend en parametre une liste et qui retourne une liste ou tout les entiers de la liste ont été transformés par la formule 2i+1 :  
+```python
 	>>> crible2([1,2,3,5,6,8])
 	[3, 5, 7, 11, 13, 17]
+```
 
 ==
 
@@ -58,3 +62,4 @@ def crible1(li):
 def crible2(l):
 	return [2*x+1 for x in l]
 ==
+
