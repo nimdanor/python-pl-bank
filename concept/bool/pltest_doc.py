@@ -5,17 +5,18 @@ import traceback
 import feedback2
 
 
-fb = feedback2.FeedBack()
-
 
 
 class PlRunner(doctest.DocTestRunner):
-    def __init__(self,studentcode,pltest,fb = feedback2.FeedBack()):
+    def __init__(self,studentcode,pltest,fb = None):
         self.right = 0
         self.fail = 0
         self.total = 0
         self.testnum = -1
-        self.fb=fb
+        if not fb :
+            self.fb=feedback2.FeedBack()
+        else:
+            self.fb=fb
         self.student= studentcode
         self.pltest= pltest
         super().__init__()
@@ -33,7 +34,7 @@ class PlRunner(doctest.DocTestRunner):
         test = doctest.DocTestParser().get_doctest(self.pltest, dic, 'votre travail', 'foo.py', 0)
         self.run(test)
         print(self.fb.getOutput())
-        return self.fb.globalok,self.fb.render()
+        return self.fb.grade(),self.fb.render()
 
 
     def testtitle(self, line):
@@ -76,6 +77,11 @@ class PlRunner(doctest.DocTestRunner):
 
     def summarize(self):
         self.fb.doTextOutput()
+
+   def grade(self):
+       if self.globalok :
+           return 100
+        return 100*(self.right/self.total)
 
 if __name__ == "__main__":
     pltest = """>>> A == 2
