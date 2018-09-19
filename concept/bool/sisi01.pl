@@ -5,13 +5,14 @@ title= Si et seulement si
 tag= input|boolean|if # N'oubliez pas de remplir ce champs svp
 template=/python/0PLG/soluce.pl
 text==
-
-Ecrire un programme qui demande à l’utilisateur un entier grace au texte:  
-	*Saisissez un entier?*  
-Et qui si il est **strictement positif** affiche    
-	*Strictement Positif* .
+## IF 
+Ecrire un programme qui demande à l’utilisateur un entier grace au texte:
+	Saisissez un entier?
+Et qui si il est **strictement positif** affiche 
+	Strictement Positif.
 ==
 
+builder=@ /template/donobuild.py
 
 
 input0=0
@@ -27,8 +28,6 @@ n=int(input("Saisissez un entier?"))
 if n >0:
 	print("Strictement Positif.")
 ==
-
-
 
 
 
