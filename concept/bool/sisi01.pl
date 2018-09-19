@@ -12,6 +12,7 @@ Et qui si il est **strictement positif** affiche
 	Strictement Positif.
 ==
 
+builder=@ /template/donobuild.py
 
 
 input0=0
@@ -26,6 +27,7 @@ n=int(input("Saisissez un entier?"))
 if n >0:
 	print("Strictement Positif.")
 ==
+
 
 
 

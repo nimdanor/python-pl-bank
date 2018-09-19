@@ -2,6 +2,9 @@
 author=DR
 title= Initialisation d'une variable.
 tag=variable
+
+template=/template/coding.pl
+
 text==
 
 Créer trois variables pim pam et pom contenant respectivement 1 2 et 3.
@@ -9,7 +12,7 @@ Créer trois variables pim pam et pom contenant respectivement 1 2 et 3.
 ==
 
 code==
-
+pim,pam,pom=0,0,0
 ==
 
 # comme ca cela se passera bien
@@ -22,4 +25,6 @@ True
 True
 ==
 
-template=/template/coding.pl
+
+
+@ /utils/sandboxio.py

@@ -14,11 +14,13 @@ print(Grader().grade())
 @/pysrc/src/pldoctest.py
 @/pysrc/src/template.html
 
-
-
+@ /utils/sandboxio.py
+builder=@ /template/donobuild.py
 
 
 # une interface standard d'exercice avec un editeur pour la réponse
 form=@ /python/form/editorform.html
+
+
 
 
