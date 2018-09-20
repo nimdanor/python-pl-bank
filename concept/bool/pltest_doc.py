@@ -17,6 +17,7 @@ class PlRunner(doctest.DocTestRunner):
             self.fb=feedback2.FeedBack()
         else:
             self.fb=fb
+        
         self.student= studentcode
         self.pltest= pltest
         super().__init__()
@@ -33,8 +34,8 @@ class PlRunner(doctest.DocTestRunner):
             return False,self.fb.getOutput()
         test = doctest.DocTestParser().get_doctest(self.pltest, dic, 'votre travail', 'foo.py', 0)
         self.run(test)
-        print(self.fb.getOutput())
-        return self.fb.grade(),self.fb.render()
+        #print(self.fb.getOutput())
+        return self.grade(),self.fb.render()
 
 
     def testtitle(self, line):
@@ -71,18 +72,24 @@ class PlRunner(doctest.DocTestRunner):
         sortie = self.testtitle(example.source)
         self.total += 1
         if not sortie :
-            self.fb.addTestError("Erreur ", str(exc_info[1]))
+            self.fb.addTestError("Erreur ", str(exc_info)) # exc_info[1]
         else :
-            self.fb.addTestError(sortie+": Test en echec ! ", str(exc_info[1]))
+            self.fb.addTestError(sortie+": Test en echec ! ", str(exc_info)) # exc_info[1]
 
     def summarize(self):
         self.fb.doTextOutput()
-
-   def grade(self):
-       if self.globalok :
+        
+    def grade(self):
+        if self.fb.globalok :
            return 100
         return 100*(self.right/self.total)
 
+
+
+
+
+
+__attic__='''
 if __name__ == "__main__":
     pltest = """>>> A == 2
     True
@@ -122,4 +129,7 @@ if __name__ == "__main__":
     #     print(b)
     # else:
     #     print(b)
+
+'''
+
 

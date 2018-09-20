@@ -27,8 +27,9 @@ if __name__ == "__main__":
     pltest = dic['pltest']
 
     student = get_answers()['answer']
-    tester = PlRunner(pltest, student)
+    tester = PlRunner(student,pltest)
     a, b = tester.runpltest()
 
     output(a, b)
+
 

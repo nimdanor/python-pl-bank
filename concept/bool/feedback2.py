@@ -84,7 +84,7 @@ class FeedBack():
     def getOutput(self):
         s=""
         if not self.globalok :
-            s+="Problemes avec votre solution\n"
+            s+="Problemes avec votre solution  \n"
             for e,t in self.errors:
                 s += e+":"+t+"\n"
         for e,n,t in self.tests:
@@ -94,9 +94,12 @@ class FeedBack():
     def __str__(self):
         return getOutput()
 
-    def render(self):
-        with open("template.html","r") as tempfile:
+    def render(self,filename="template.md"):
+        with open(filename,"r") as tempfile:
             templatestring = tempfile.read()
         template = jinja2.Template(templatestring)
         x= template.render(feedback=self)
         return x
+
+
+

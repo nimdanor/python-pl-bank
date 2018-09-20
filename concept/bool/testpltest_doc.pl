@@ -1,15 +1,23 @@
 title=test de pltest_doc 
 
-@ pltest_doc.py
-@ /pysrc/src/plutils.py
+text==
+
+Hop A égal à 2 et B à 3 
+
+==
+
+
+
 
 code==
 A=2
 B=3
 ==
 
+# les tests avec un seul # ne sont pas visible par l'étudiant
+# sauf si il produisent une erreur  
 pltest==
->>> A == A # A existe 
+>>> A == A #
 True
 >>> B == B # B Existe
 True
@@ -19,18 +27,9 @@ True
 True
 ==
 
-@ evaluator.py [grader.py]
-@ feedback2.py
-
-@/pysrc/src/__init__.py
-
-@/pysrc/src/plutils.py
-@/pysrc/src/pldoctest.py
-#@/pysrc/src/template.html
-@ /utils/sandboxio.py
+template=pltest.pl
 
 
 
 
-# une interface standard d'exercice avec un editeur pour la réponse
-form=@ /python/form/editorform.html
+
