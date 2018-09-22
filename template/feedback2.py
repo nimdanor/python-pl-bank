@@ -64,32 +64,14 @@ class FeedBack():
         self.tests.append((ERROR, self.numtest, text, error, para))
         #self.addError("test", error)
 
-    # def __addError(self, typeerror, error):
-    #     self.errors.append((typeerror, error))
-    #     self.globalok = False
-
-    # def compileError(self, error):
-    #     self.addError("compile", error)
-    #
-    # def ruleError(self, error):
-    #     self.addError("rule", error)
 
     def _doTextOutput(self):
-        if not self.globalok :
-            print("Problemes avec votre solution")
-            for e,t in self.errors:
-                print(e+":"+t)
-        for e,n,t in self.tests:
-            print("Test num :"+str(n)+" "+e+" "+t)
+            print(getOutout())
 
     def getOutput(self):
         s=""
-        if not self.globalok :
-            s+="Problemes avec votre solution  \n"
-            for e,t in self.errors:
-                s += e+":"+t+"\n"
-        for e,n,t in self.tests:
-            s += "Test num :"+str(n)+" "+e+" "+t+"\n"
+        for e,n,t,x in self.tests:
+            s += "Test num :"+str(n)+" "+e+" "+t+" " +x+"\n"
         return s
 
     def __str__(self):
