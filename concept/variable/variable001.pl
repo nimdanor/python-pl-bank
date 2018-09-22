@@ -25,6 +25,7 @@ True
 True
 ==
 
-
+editor.fontsize=24
 
 @ /utils/sandboxio.py
+

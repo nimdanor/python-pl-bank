@@ -22,7 +22,8 @@ class PlRunner(doctest.DocTestRunner):
         self.pltest= pltest
         super().__init__()
 
-    def runpltest(self):
+    def runpltest(self, name):
+        self.fb.name=str(name)
         dic = {}
         # ~ with open("student.py","r") as f:
         # ~ exec(f.read(),dic)
@@ -54,17 +55,17 @@ class PlRunner(doctest.DocTestRunner):
 
     def report_start(self, out, test, example):
         pass
-    def report_success(self, out, test, example, doc):
+    def report_success(self, out, test, example, got):
         sortie = self.testtitle(example.source)
         if sortie:
-            self.fb.addTestSuccess(sortie)
+            self.fb.addTestSuccess(sortie, got, example.want)
             self.right += 1
             self.total += 1
 
     def report_failure(self, out, test, example, doc):
         sortie = self.testtitle(example.source)
         if sortie:
-            self.fb.addTestFailure(sortie)
+            self.fb.addTestFailure(sortie, got, example.want)
             self.fail += 1
             self.total += 1
 
@@ -72,9 +73,9 @@ class PlRunner(doctest.DocTestRunner):
         sortie = self.testtitle(example.source)
         self.total += 1
         if not sortie :
-            self.fb.addTestError("Erreur ", str(exc_info)) # exc_info[1]
+            self.fb.addTestError("Erreur !", exc_info) # exc_info:  (type, value, traceback)
         else :
-            self.fb.addTestError(sortie+": Test en echec ! ", str(exc_info)) # exc_info[1]
+            self.fb.addTestError(sortie+": en erreur ! ", exc_info,type(exc_info)) # exc_info[1]
 
     def summarize(self):
         self.fb.doTextOutput()
@@ -89,47 +90,7 @@ class PlRunner(doctest.DocTestRunner):
 
 
 
-__attic__='''
-if __name__ == "__main__":
-    pltest = """>>> A == 2
-    True
-    >>> titi==12     #Test titi initialisé à 12
-    True
-    >>> tiXti==12 ##
-    True
-    >>> taXi==12 # Test belbelbe
-    True
-    >>> TUTUTUTUTU==12 #
-    True
-    >>> __student.count("if") < 3 # Pas plus de Trois if
-    True
-    >>> __student.count("truc") > 4 #
-    True
-    """
-    studentcode = "ZA=2;A=2;X=T"
-
-    runner = PlRunner(studentcode , pltest,fb=feedback2.FeedBack())
-    a,b = runner.runpltest()
-    print(b)
 
 
-    runner = PlRunner("A=2;titi=12" , pltest,fb=feedback2.FeedBack())
-    a,b = runner.runpltest()
-    if a:
-        print("Bravo",b)
-    else:
-        print(b)
-
-
-    #
-    # runner = PlRunner("A=2;titi=12;jacques=11" , ">>> Caco==2 #\nTrue\n>>> A==2\nTrue\n>>> titi==12\nTrue",fb=feedback2.FeedBack())
-    # a,b = runner.runpltest()
-    # if a:
-    #     print("Bravo")
-    #     print(b)
-    # else:
-    #     print(b)
-
-'''
 
 

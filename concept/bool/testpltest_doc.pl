@@ -19,7 +19,7 @@ B=3
 pltest==
 >>> A == A #
 True
->>> B == B # B Existe
+>>> B == B #
 True
 >>> A==2 # A vaut 2 
 True
@@ -27,8 +27,33 @@ True
 True
 ==
 
+pltest0==
+>>> 1==1
+True
+>>> 1==1
+True
+>>> 1==1
+True
+>>> 1==1
+True
+>>> 1==1
+True
+==
+
+pltest1==
+>>> C==C
+True
+>>> D==C
+True
+>>> E==C
+True
+==
+
+
+
 template=pltest.pl
 
+@ template.html
 
 
 

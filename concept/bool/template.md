@@ -1,10 +1,15 @@
-    {% for type,num,text in feedback.tests %}
-        {%  if type=="failure" %}#  Test {{ num }} échec <p style="background-color: Tomato;">{{text}}</p>
-        {% endif %}
-        {% if type=="success" %}# Test {{ num }} success <p style="background-color: lightgreen;">{{text}}</p>
-        {%  endif %}
-        {% if type=="error" %}#  Test {{ num }} Error Failure <p style="background-color: Tomato;">{{text}}</p>
-        {%  endif %}
-    {% endfor %}
+
+
+Test suite {{feedback.name}}
+{% for type,num,text,g,w in feedback.tests %}
+{%  if type=="failure" %}
+###<p style="background-color: Tomato;">Test {{ num }}
+Failure {{text}} attendu {{w}} optenu {{g}}</p> {% endif %}
+{% if type=="success" %}<p style="background-color: lightgreen;">###Test {{ num }}
+success {{text}} attendu {{w}} optenu {{g}}</p>{%  endif %}
+{% if type=="error" %}###Test {{ num }} Error Failure <p style="background-color: Tomato;">{{text}} {{g[1]}}</p>{%  endif %}
+{% endfor %}
+
+
 
 

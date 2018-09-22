@@ -42,25 +42,26 @@ Comment utiliser feedback2
 
 
 class FeedBack():
-    def __init__(self):
+    def __init__(self,name="",filename="template.html"):
         self.tests = []
-        self.errors = []
         self.globalok = True  # if not true at least one problem
         self.numtest = 0
+        self.name = str(name)
+        self.filename=filename
 
-    def addTestSuccess(self, text):
+    def addTestSuccess(self, text, got, want):
         self.numtest += 1
-        self.tests.append((SUCCESS, self.numtest, text))
+        self.tests.append((SUCCESS, self.numtest, text, got, want))
 
-    def addTestFailure(self, text):
+    def addTestFailure(self, text, got, want):
         self.numtest += 1
         self.globalok = False
-        self.tests.append((FAILURE, self.numtest, text))
+        self.tests.append((FAILURE, self.numtest, text, got, want))
 
-    def addTestError(self, text, error):
+    def addTestError(self, text, error,para):
         self.globalok = False
         self.numtest += 1
-        self.tests.append((ERROR, self.numtest, text+error))
+        self.tests.append((ERROR, self.numtest, text, error, para))
         #self.addError("test", error)
 
     # def __addError(self, typeerror, error):
@@ -92,14 +93,15 @@ class FeedBack():
         return s
 
     def __str__(self):
-        return getOutput()
+        return self.render()
 
-    def render(self,filename="template.md"):
-        with open(filename,"r") as tempfile:
+    def render(self):
+        with open(self.filename,"r") as tempfile:
             templatestring = tempfile.read()
         template = jinja2.Template(templatestring)
         x= template.render(feedback=self)
-        return x
+        return  x 
+
 
 
 
