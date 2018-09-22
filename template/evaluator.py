@@ -29,8 +29,8 @@ if __name__ == "__main__":
     student = get_answers()['answer']
     outstr=""
     tester = PlRunner(student,pltest)
-    a, b = tester.runpltest(0)
-    i=0
+    a, b = tester.runpltest(1)
+    i=1
     while "pltest"+str(i) in dic and a==100:
         #outstr += "<h3> Test suite "+str(i)+"</h3>"+b
         outstr += b
