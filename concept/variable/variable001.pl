@@ -3,7 +3,7 @@ author=DR
 title= Initialisation d'une variable.
 tag=variable
 
-template=/template/coding.pl
+template=/template/pltest.pl
 
 text==
 
@@ -17,12 +17,12 @@ pim,pam,pom=0,0,0
 
 # comme ca cela se passera bien
 pltest==
->> pim==1
-True
->>> pam==2
-True
->>> pom==3
-True
+>>> pim
+1
+>>> pam
+2
+>>> pom
+3
 ==
 
 editor.fontsize=24

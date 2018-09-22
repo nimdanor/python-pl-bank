@@ -10,23 +10,23 @@ Test suite {{feedback.name}} success
 {% else %}
 <div style="border:1px solid black;padding:1%;margin:1%;background-color:Tomato;border-radius:4px;">
 <button type="button" class="btn btn-block  btn-danger"
-aria-expanded="true"
+aria-expanded="true" aria-controls="suite{{feedback.name}}"
 data-toggle="collapse" data-target="#suite{{feedback.name}}">
 Test suite {{feedback.name}}  Failure
 </button>
-<div id="suite{{feedback.name}}" class="collapse">
-<div class="card card-success;" style="background-color: Tomato;">
+<div id="suite{{feedback.name}}" class="show">
+<div class="card card-danger;" style="background-color: Tomato;">
 {% endif %}
 {% for type,num,text,got,want in feedback.tests %}
 {%  if type=="failure" %}
 <div style="border:1px solid black;padding:1%;margin:1%;background-color:Tomato;border-radius:4px;">
-<button type="button" class="btn btn-block btn-success"
-aria-expanded="true"
+<button type="button" class="btn btn-block btn-danger"
+aria-expanded="true" aria-controls="demo{{feedback.name}}{{num}}"
 data-toggle="collapse" data-target="#demo{{feedback.name}}{{num}}">
 Test {{ num }} Failure
 </button>
-<div id="demo{{feedback.name}}{{num}}" class="collapse">
-<div class="card card-success;" style="background-color: Tomato;">
+<div id="demo{{feedback.name}}{{num}}" class="show">
+<div class="card card-danger;" style="background-color: Tomato;">
 <p>{{text}}<br/>
 Attendu: {{want}} optenu: {{got}} </p>
 </div>

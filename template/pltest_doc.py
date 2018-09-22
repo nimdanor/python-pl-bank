@@ -31,7 +31,7 @@ class PlRunner(doctest.DocTestRunner):
         try:
             exec(self.student, dic)
         except Exception as e:
-            self.fb.addTestError("Compilation ",str(e))
+            self.fb.addTestError("Compilation ",str(e),"")
             return False,self.fb.getOutput()
         test = doctest.DocTestParser().get_doctest(self.pltest, dic, 'votre travail', 'foo.py', 0)
         self.run(test)
@@ -62,7 +62,7 @@ class PlRunner(doctest.DocTestRunner):
             self.right += 1
             self.total += 1
 
-    def report_failure(self, out, test, example, doc):
+    def report_failure(self, out, test, example, got):
         sortie = self.testtitle(example.source)
         if sortie:
             self.fb.addTestFailure(sortie, got, example.want)
@@ -73,7 +73,7 @@ class PlRunner(doctest.DocTestRunner):
         sortie = self.testtitle(example.source)
         self.total += 1
         if not sortie :
-            self.fb.addTestError("Erreur !", exc_info) # exc_info:  (type, value, traceback)
+            self.fb.addTestError("Erreur !", exc_info,type(exc_info)) # exc_info:  (type, value, traceback)
         else :
             self.fb.addTestError(sortie+": en erreur ! ", exc_info,type(exc_info)) # exc_info[1]
 
@@ -84,6 +84,7 @@ class PlRunner(doctest.DocTestRunner):
         if self.fb.globalok :
            return 100
         return 100*(self.right/self.total)
+
 
 
 

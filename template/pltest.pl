@@ -28,13 +28,15 @@ Si vous voulez plusieurs groupes de test vous notez pltest1 puis pltest2 etc
     >> f == f # Bande de moules 
     True
     ==
-
+  #@ template.md [template.html]
 ==
 
 @ pltest_doc.py
 @ evaluator.py [grader.py]
 @ feedback2.py
-@ template.md
+@ template.html
+# 
+
 @ /utils/sandboxio.py
 
 builder=@ /template/donobuild.py
@@ -42,4 +44,5 @@ builder=@ /template/donobuild.py
 editor.fontsize=14px
 # une interface standard d'exercice avec un editeur pour la réponse
 form=@ /python/form/editorform.html
+
 
