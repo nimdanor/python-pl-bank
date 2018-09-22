@@ -70,8 +70,8 @@ class FeedBack():
 
     def getOutput(self):
         s=""
-        for e,n,t,x in self.tests:
-            s += "Test num :"+str(n)+" "+e+" "+t+" " +x+"\n"
+        for e,n,t,x,y in self.tests:
+            s += "Test num :"+str(n)+" "+e+" "+t+" " +x+" "+ y +"\n"
         return s
 
     def __str__(self):
