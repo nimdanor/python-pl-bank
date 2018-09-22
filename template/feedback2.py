@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!rusr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 #   feedback2.py
@@ -62,7 +62,6 @@ class FeedBack():
         self.globalok = False
         self.numtest += 1
         self.tests.append((ERROR, self.numtest, text, error, para))
-        #self.addError("test", error)
 
 
     def _doTextOutput(self):

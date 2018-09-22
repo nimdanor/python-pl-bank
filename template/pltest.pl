@@ -29,6 +29,15 @@ Si vous voulez plusieurs groupes de test vous notez pltest1 puis pltest2 etc
     True
     ==
   #@ template.md [template.html]
+
+
+Si vous souhaitez faire des tests sur le code de l'élève la variable __student__ est accessible dans le pltest
+
+    pltest2==
+    >>> __student.count("if")>1 # Trop de tests IF 
+    False
+    ==
+
 ==
 
 @ pltest_doc.py
