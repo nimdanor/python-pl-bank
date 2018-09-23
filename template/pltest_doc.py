@@ -4,7 +4,15 @@ import traceback
 
 import feedback2
 
-
+def subnlbybr(str):
+    """
+>>> subnlbybr("\\n")
+'<br/>'
+    """
+    if str :
+       str = "<br/>".join(str.split("\n"))
+       return "&nbsp;".join(str.split(" "))
+    return None
 
 
 class PlRunner(doctest.DocTestRunner):
@@ -29,10 +37,10 @@ class PlRunner(doctest.DocTestRunner):
         # ~ exec(f.read(),dic)
         dic['__student']=self.student
         try:
-            compile(self.student,"Votre code")
+            compile(self.student,"Votre code",'exec')
             exec(self.student, dic)
         except SyntaxError as e:
-            self.fb.addTestSyntaxError(name,traceback.format_exc(limit=0,chain=False),"Compilation")
+            self.fb.addTestSyntaxError(name,subnlbybr(traceback.format_exc(limit=0,chain=False)),"Compilation")
         else:
             test = doctest.DocTestParser().get_doctest(self.pltest, dic, 'votre travail', 'foo.py', 0)
             self.run(test)
@@ -74,9 +82,9 @@ class PlRunner(doctest.DocTestRunner):
         sortie = self.testtitle(example.source)
         self.total += 1
         if not sortie :
-            self.fb.addTestError("Erreur !",traceback.format_exec(limit=3)i,"")
+            self.fb.addTestError("Erreur !",subnlbybr(traceback.format_exc(limit=3)),"")
         else :
-            self.fb.addTestError(sortie+": en erreur ! ", traceback.format_exec(limit=3), "")
+            self.fb.addTestError(sortie+": en erreur ! ", subnlbybr(traceback.format_exc(limit=3)), "")
 
     def summarize(self):
         self.fb.doTextOutput()
@@ -84,7 +92,10 @@ class PlRunner(doctest.DocTestRunner):
     def grade(self):
         if self.fb.globalok :
            return 100
-        return 100*(self.right/self.total)
+        if self.total:
+            return 100*(self.right/self.total)
+        else:
+            return 0
 
 
 

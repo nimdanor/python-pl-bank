@@ -21,26 +21,26 @@ pltest==
 True
 >>> B == B #
 True
->>> A==2 # A vaut 2 
+>>> A # A egal deux
+2
+>>> B # A egal 3
+3
+==
+
+xpltest0==
+>>> 1==12
 True
->>> B==3 
+>>> 1==1
+True
+>>> 1==1
+True
+>>> 1==1
+True
+>>> 1==1
 True
 ==
 
-pltest0==
->>> 1==1
-True
->>> 1==1
-True
->>> 1==1
-True
->>> 1==1
-True
->>> 1==1
-True
-==
-
-pltest1==
+Xpltest1==
 >>> C==C
 True
 >>> D==C
@@ -54,6 +54,7 @@ True
 template=pltest.pl
 
 @ template.html
+
 
 
 

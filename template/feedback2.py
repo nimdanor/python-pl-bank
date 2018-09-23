@@ -82,6 +82,7 @@ class FeedBack():
         """
         self.globalok = False
         self.numtest += 1
+        error = "<br>".join(error.split("\n"))
         self.tests.append((ERROR, self.numtest, text, error, para))
 
     def addTestSyntaxError(self, text, error, para):
@@ -115,6 +116,7 @@ class FeedBack():
         template = jinja2.Template(templatestring)
         x= template.render(feedback=self)
         return  x 
+
 
 
 
