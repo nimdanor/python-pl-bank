@@ -29,9 +29,10 @@ class PlRunner(doctest.DocTestRunner):
         # ~ exec(f.read(),dic)
         dic['__student']=self.student
         try:
+            compile(self.student,"Votre code")
             exec(self.student, dic)
-        except Exception as e:
-            self.fb.addTestError("Compilation ",str(e),"")
+        except SyntaxError as e:
+            self.fb.addTestSyntaxError(name,e.filename + "ligne :"+ e.lineno+" offset "+  e.offset+" text ""+text,"Compilation")
             return False,self.fb.getOutput()
         test = doctest.DocTestParser().get_doctest(self.pltest, dic, 'votre travail', 'foo.py', 0)
         self.run(test)

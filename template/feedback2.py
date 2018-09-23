@@ -13,7 +13,7 @@ import jinja2
 ERROR="error"
 FAILURE="failure"
 SUCCESS="success"
-
+SYNTAX="syntax"
 
 __doc__="""
 
@@ -50,18 +50,51 @@ class FeedBack():
         self.filename=filename
 
     def addTestSuccess(self, text, got, want):
+        """
+        :param text: the test name
+        :param got: result of execution
+        :param want: what was expected
+
+        add a  postive test result to the feedback
+        """
         self.numtest += 1
         self.tests.append((SUCCESS, self.numtest, text, got, want))
 
     def addTestFailure(self, text, got, want):
+        """
+        :param text: the test name
+        :param got: result of execution
+        :param want: what was expected
+
+        add a negative test result to the feedback
+        """
         self.numtest += 1
         self.globalok = False
         self.tests.append((FAILURE, self.numtest, text, got, want))
 
-    def addTestError(self, text, error,para):
+    def addTestError(self, text, error, para):
+        """
+        :param text: the test name
+        :param error: the string version of the Exception that occured
+        :param para: a text corellated to the state compilation error or execution error
+
+        add a  negative+error test result to the feedback
+        """
         self.globalok = False
         self.numtest += 1
         self.tests.append((ERROR, self.numtest, text, error, para))
+
+    def addTestSyntaxError(self, text, error, para):
+        """
+        :param text: the test name
+        :param error: the Exception that occured
+        :param para: a text corellated to the state compilation error or execution error
+
+        add a  negative+error test result to the feedback
+        """
+        self.globalok = False
+        self.numtest += 1
+        self.tests.append((SYNTAX, self.numtest, text, error, para))
 
 
     def _doTextOutput(self):
