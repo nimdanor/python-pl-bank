@@ -32,11 +32,11 @@ class PlRunner(doctest.DocTestRunner):
             compile(self.student,"Votre code")
             exec(self.student, dic)
         except SyntaxError as e:
-            self.fb.addTestSyntaxError(name,e.filename + "ligne :"+ e.lineno+" offset "+  e.offset+" text ""+text,"Compilation")
-            return False,self.fb.getOutput()
-        test = doctest.DocTestParser().get_doctest(self.pltest, dic, 'votre travail', 'foo.py', 0)
-        self.run(test)
-        #print(self.fb.getOutput())
+            self.fb.addTestSyntaxError(name,traceback.format_exc(limit=0,chain=False),"Compilation")
+        else:
+            test = doctest.DocTestParser().get_doctest(self.pltest, dic, 'votre travail', 'foo.py', 0)
+            self.run(test)
+            #print(self.fb.getOutput())
         return self.grade(),self.fb.render()
 
 
