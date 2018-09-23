@@ -75,7 +75,7 @@ class FeedBack():
     def addTestError(self, text, error, para):
         """
         :param text: the test name
-        :param error: the string version of the Exception that occured
+        :param error: the string version of the Exception that occured using format_exec
         :param para: a text corellated to the state compilation error or execution error
 
         add a  negative+error test result to the feedback

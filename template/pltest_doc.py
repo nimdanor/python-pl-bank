@@ -74,9 +74,9 @@ class PlRunner(doctest.DocTestRunner):
         sortie = self.testtitle(example.source)
         self.total += 1
         if not sortie :
-            self.fb.addTestError("Erreur !", exc_info,type(exc_info)) # exc_info:  (type, value, traceback)
+            self.fb.addTestError("Erreur !",traceback.format_exec(limit=3)i,"")
         else :
-            self.fb.addTestError(sortie+": en erreur ! ", exc_info,type(exc_info)) # exc_info[1]
+            self.fb.addTestError(sortie+": en erreur ! ", traceback.format_exec(limit=3), "")
 
     def summarize(self):
         self.fb.doTextOutput()
