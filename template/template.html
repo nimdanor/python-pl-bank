@@ -1,9 +1,9 @@
 <!-- default template used by the feedback code can be bypassed in  feedback class see documentation -->
 {% if feedback.globalok %}
-<div style="border:1px solid black;padding:1%;margin:1%;background-color:LightGreen;border-radius:4px;">
+<div style="border:1px solid black;padding:0%;margin:1%;background-color:LightGreen;border-radius:4px;">
 <button type="button" class="btn btn-block btn-success"
 data-toggle="collapse" data-target="#suite{{feedback.name}}">
-Test suite {{feedback.name}} success
+{{feedback.name}} success
 </button>
 <div id="suite{{feedback.name}}" class="collapse">
 <div class="card card-success;" style="background-color: LightGreen;">
@@ -12,46 +12,54 @@ Test suite {{feedback.name}} success
 <button type="button" class="btn btn-block  btn-danger"
 aria-expanded="true" aria-controls="suite{{feedback.name}}"
 data-toggle="collapse" data-target="#suite{{feedback.name}}">
-Test suite {{feedback.name}}  Failure
+{{feedback.name}}  Failure
 </button>
 <div id="suite{{feedback.name}}" class="show">
 <div class="card card-danger;" style="background-color: Tomato;">
 {% endif %}   
 {% for type,num,text,got,want in feedback.tests %}
 {%  if type=="failure" %}
-<div style="border:1px solid black;padding:1%;margin:1%;background-color:Tomato;border-radius:4px;">
+<div style="border:1px solid black;padding:1px;margin:1px;background-color:Tomato;border-radius:4px;">
 <button type="button" class="btn btn-block btn-danger"
 aria-expanded="true" aria-controls="demo{{feedback.name}}{{num}}"
 data-toggle="collapse" data-target="#demo{{feedback.name}}{{num}}">
-Test {{ num }} Failure
+{{ text }} Failure
 </button>
 <div id="demo{{feedback.name}}{{num}}" class="show">
 <div class="card card-danger;" style="background-color: Tomato;">
-<p>{{text}}<br/>
-Attendu: {{want}} optenu: {{got}} </p>
+<p>{{text}}
+{% if want or got %}
+<br/> Attendu: {{want}}
+<br/> Optenu: {{got}}
+{% endif %}
+</p>
 </div>
 </div>
 </div>
 {% endif %}
 {% if type=="success" %}
-<div style="border:1px solid black;padding:1%;margin:1%;background-color:LightGreen;border-radius:4px;">
+<div style="border:1px white;padding:1px;margin:1px;background-color:LightGreen;border-radius:4px;">
 <button type="button" class="btn btn-block btn-success"
 data-toggle="collapse" data-target="#demo{{feedback.name}}{{num}}">
-Test {{ num }} success
+{{text}} success
 </button>
 <div id="demo{{feedback.name}}{{num}}" class="collapse">
 <div class="card card-success;" style="background-color: LightGreen;">
-<p>{{text}}<br/>
-Attendu: {{want}} optenu: {{got}} </p>
+<p>{{text}}
+{% if want or got %}
+<br/> Attendu: {{want}}
+<br/> Optenu: {{got}}
+{% endif %}
+</p>
 </div>
 </div>
 </div>
 {%  endif %}
 {% if type=="error"  %}
-<div style="border:2px solid black;padding:1%;margin:1%;background-color:Tomato;border-radius:4px;">
+<div style="border:2px solid black;padding:1px;margin:1px;background-color:Tomato;border-radius:4px;">
 <button type="button" class="btn btn-block btn-danger"
 data-toggle="collapse" data-target="#demo{{feedback.name}}{{num}}">
-Test {{ num }} Error Failure
+{{ text }} Error Failure
 </button>
 <div id="demo{{feedback.name}}{{num}}" class="show">
 <div class="card card-danger" style="background-color: Tomato;">
@@ -59,12 +67,13 @@ Test {{ num }} Error Failure
 </div>
 </div>
 </div>
+
 {%  endif %}
 {% if  type=="syntax" %}
-<div style="border:2px solid black;padding:1%;margin:1%;background-color:Tomato;border-radius:4px;">
+<div style="border:2px solid black;padding:1px;margin:1px;background-color:Tomato;border-radius:4px;">
 <button type="button" class="btn btn-block btn-danger"
 data-toggle="collapse" data-target="#demo{{feedback.name}}{{num}}">
-Error de {{ want }}
+{{ text}} ///// {{ want }}
 </button>
 <div id="demo{{feedback.name}}{{num}}" class="show">
 <div class="card card-danger" style="background-color: black; ">
@@ -77,5 +86,6 @@ Error de {{ want }}
 </div>
 </div>
 </div>
+
 
 

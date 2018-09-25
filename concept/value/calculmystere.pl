@@ -52,9 +52,9 @@ evaluator==
 if not response['answer']:
     grade= False," Repondez quelque chose !"
 elif int(response['answer']) == res:
-    grade = True," Bien joué ! "+str(res)
+    grade = True,'<div class="btn-success"> Bien joué ! '+str(res)+'</div>'
 else:
-    grade = False," Réessayez "
+    grade = False,'<div class="btn-danger">  Raté : réessayez </div>'
 ==
 
 

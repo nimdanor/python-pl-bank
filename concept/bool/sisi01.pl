@@ -3,25 +3,19 @@ author=Dominique Revuz
 name=sisi01.pl
 title= Si et seulement si
 tag= input|boolean|if # N'oubliez pas de remplir ce champs svp
-template=/python/0PLG/soluce.pl
+template=/template/soluce.pl
 text==
-## IF 
 Ecrire un programme qui demande à l’utilisateur un entier grace au texte:
 	Saisissez un entier?
 Et qui si il est **strictement positif** affiche 
 	Strictement Positif.
 ==
 
-builder=@ /template/donobuild.py
-
-
-input0=0
-
-input1=1
-
-input2=-1
-
-showinput=False
+plsoluce==
+Positif | 14
+Nul | 0
+Négatif | -3
+==
 
 soluce==
 n=int(input("Saisissez un entier?"))

@@ -31,17 +31,21 @@ if __name__ == "__main__":
         with open("soluce.py","w") as sol:
             sol.write(dic['soluce'])
     lestest=[]
-    for i,line in enumrate(dic['plsoluce'].split("\n")):
-        if '|' not in line:
-             print(" missing | in test line ",i,": ", line, file=sys.stderr)
-             sys.exit(1)
-        lestests.append(line.split('|'))
-    
+    for i,line in enumerate(dic['plsoluce'].split("\n")):
+        if line != "" : # problem with finishing empty line
+            if len(line.split('|')) != 2 :
+                print(" to many | ",len(line.split('|')) ,"in test line ",i,": ", str(beurkl), file=sys.stderr)
+                sys.exit(1)
+            lestest.append(line.split('|'))
+    student = get_answers()['answer']
+    with open("student.py","w") as sf:
+        sf.write(student)
     import feedback2
     fb=feedback2.FeedBack()
-    ret=gradesoluce.runsolucetests(lestest,fb)
+    ret=runsolucetests(lestest,fb)
 
 
     output(ret, fb.render())
+
 
 

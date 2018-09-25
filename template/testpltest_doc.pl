@@ -23,7 +23,7 @@ True
 True
 >>> A # A egal deux
 2
->>> B # A egal 3
+>>> B
 3
 ==
 
@@ -54,6 +54,7 @@ True
 template=pltest.pl
 
 @ template.html
+
 
 
 

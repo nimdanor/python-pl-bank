@@ -3,10 +3,11 @@ author=Dominique Revuz
 name=sisi002.pl
 title= Si Sinon
 tag= input|else|if|elif
-template=/python/0PLG/soluce.pl
+template=/template/soluce.pl
 text==
 Ecrire un programme qui demande à l’utilisateur un entier grace au texte:
-	Saisissez un entier?
+	**Saisissez un entier?**  
+	Remarque le code de la question précédente.
 
 Si l'entier est **positif** affiche 
 	Positif.
@@ -18,12 +19,11 @@ Sinon affiche
 	Nul.
 ==
 
-
-input0=0
-
-input1=1
-
-input2=-1
+plsoluce==
+Une entrée Positive | 13
+Une entrée Négative | -66
+Une entrée Nulle | 0
+==
 
 
 soluce==
@@ -35,3 +35,4 @@ elif n< 0:
 else:
 	print("Nul.")
 ==
+

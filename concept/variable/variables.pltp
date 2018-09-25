@@ -1,7 +1,17 @@
 
-introduction=Prout
 
-@ variable001.pl
 
-title=Bande de moules
+title=Intialisation de Variables
+
+
+
+introduction=
+
+Une petite introduction aux variables avec quelques initialisation.
+
+==
+@ /concept/variable/variable001.pl
+@ /concept/variable/variable002.pl
+@ /concept/variable/variable003.pl
+@ /concept/variable/littandtypes.pl 
 

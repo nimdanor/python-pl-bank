@@ -44,7 +44,7 @@ form=@ /forms/simpletextform.html
 
 
 evaluator==
-ret = response['answer']
+ret = response['txt_answer']
 
 try:
     cal=float(ret)
@@ -53,12 +53,13 @@ except:
     try:
         cal=eval(ret)
         if cal == res:
-            grade = True," Bien jouer ! "+str(ret)+" = " +str(res)
+            grade = True,'<div class="btn-success"> Bien joué ! '+str(ret)+" = " +str(res)+'</div>'
         else:
-            grade = False," Essai encore "
+            grade = False,'<div class="btn-danger">  Raté : réessayez </div>'
     except :
-        grade= False, " Formule Incorrecte"
+        grade= False,'<div class="btn-danger"> Formule Incorrecte</div>'
 
 ==
+
 
 

@@ -7,8 +7,9 @@ Test suite {{feedback.name}}
 Failure {{text}} attendu {{w}} optenu {{g}}</p> {% endif %}
 {% if type=="success" %}<p style="background-color: lightgreen;">###Test {{ num }}
 success {{text}} attendu {{w}} optenu {{g}}</p>{%  endif %}
-{% if type=="error" %}###Test {{ num }} Error Failure <p style="background-color: Tomato;">{{text}} {{g[1]}}</p>{%  endif %}
+{% if type=="error" %}###Test {{ num }} Error Failure <p style="background-color: Tomato;">{{text}} {{g}}</p>{%  endif %}
 {% endfor %}
+
 
 
 

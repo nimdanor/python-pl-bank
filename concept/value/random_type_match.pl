@@ -26,10 +26,11 @@ build=@ /concept/value/randomexpbuild.py
 num=3
 
 evaluator==
-def evaluator(reponse, dic):
-    if (reponse == dic['pairs']): # comparaisons de deux dictionnaires
-        return True, "Bien joué"
-    print("reponse",str(reponse))
-    print("dicpairs",str(dic['pairs']))
-    return False, "Mauvais matching"
+
+if (reponse == dic['pairs']): # comparaisons de deux dictionnaires
+    return True, "Bien joué"
+print("reponse",str(reponse))
+print("dicpairs",str(dic['pairs']))
+return False, "Mauvais matching"
 ==
+

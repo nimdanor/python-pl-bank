@@ -1,6 +1,8 @@
 title=Calcul Mystere III
 
 
+template=/template/simpleeval.pl
+
 text==
 La variable a est initialise avec la valeur {{a}}.
 
@@ -10,7 +12,6 @@ La question est quelle est la valeur de la variable p a la fin de la suite d'ins
 
 
 ==
-
 
 
 before==
@@ -48,7 +49,7 @@ form=@ /forms/simpletextform.html
 
 
 evaluator==
-ret = response['answer']
+ret = response['txt_answer']
 if "p" in ret or "a" in ret:
     grade= False,"Une expression sans utiliser ni a ni p svp."
 else:
@@ -59,12 +60,11 @@ else:
         try:
             cal=eval(ret)
             if cal == res:
-                grade = True," Bien jouer ! "+str(ret)+" = " +str(res)
+                 grade = True,'<div class="btn-success"> Bien joué ! '+str(ret)+" = " +str(res)+'</div>'
             else:
-                grade = False," Essai encore "
+                grade = False,'<div class="btn-danger">  Raté : réessayez </div>'
         except :
-            grade= False, " Formule Incorrecte"
-
+            grade= False,'<div class="btn-danger"> Formule Incorrecte</div>'
 ==
 
 

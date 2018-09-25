@@ -16,8 +16,22 @@ code==
 
 # comme ca cela se passera bien
 pltest==
->> X=="Toto"
+>>> X=="Toto"
+True
+>>> "Toto"==X
+True
+>>> X !="Tata"
+True
+>>> X=="Toto"
 True
 ==
 
-template=/template/coding.pl
+pltest1==
+>>> X
+'Toto'
+==
+
+
+
+template=/template/pltest.pl
+

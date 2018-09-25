@@ -17,15 +17,17 @@ pim,pam,pom=0,0,0
 
 # comme ca cela se passera bien
 pltest==
->>> pim
+>>> pim 
 1
+>>> pam == pam  #
+True
 >>> pam
 2
 >>> pom
 3
 ==
 
-editor.fontsize=24
+editor.fontsize=24px
 
 @ /utils/sandboxio.py
 

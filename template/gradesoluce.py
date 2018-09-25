@@ -12,21 +12,17 @@ def execute(args, instr):
     :param args: the subprocess parameter
     :param instr: the input file for the subprocess parameter
     :return:
-        boolean: no problemos
+        boolean: code de retour 
         stdout
         stderr
     """
     try:
-        if instr:
-            encoded = instr.encode("utf-8")
-        else:
-            encoded = None
-        tt = subprocess.check_output(args, input=encoded)
-        return True, tt.decode("utf-8"), ""
-    except subprocess.CalledProcessError as cpe:
-        sortieo =  cpe.stdout.decode("utf-8") if cpe.stdout else "sortie vide"
-        sortiee =  cpe.stderr.decode("utf-8") if cpe.stderr else "sortie erreur vide"
-        return False,sortieo, sortiee
+        p = subprocess.Popen(" ".join(args), stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,shell= True)
+        sortieo,sortiee = p.communicate(input=instr.encode())
+        return p.returncode == 0, sortieo.decode(),sortiee.decode() 
+    except Exception as e:
+        return False, " ".join(args), str(e)
 
 
 def executefromstring(code, inputstr, filename="dummy.py"):
@@ -64,7 +60,7 @@ def unitTestWithSoluce(testname, studentfilename, solucefilename, input_str, fee
         """
         the soluce is not working !!!
         """
-        feedback.addTestError(testname, " The solution is not working\n Stdout: " + o + "\n Stderr: " + e, "")
+        feedback.addTestError("la soluce ne fonctionne pas", " Messages d'erreur \n "+ e,o)
         return False
     return unitTestWithOutput(testname, studentfilename, o, input_str, feedback )
 
@@ -81,12 +77,12 @@ def unitTestWithOutput(testname, studentfilename, outputstr, input_str, feedback
 
     xb, xo, xe = executefromfilename(studentfilename, input_str)
     if not xb:
-        feedback.addTestError(testname, " Problèmes avec votre code \n Stdout: " + o + "\n Stderr: " + e, "")
+        feedback.addTestError(testname, " Problèmes avec votre code \n " + xo + "\n" + xe, "")
         return False
     oc = doctest.OutputChecker()
     res = oc.check_output(outputstr, xo, 0)
-    print("inputstr:", input_str,"attendu:", outputstr)
-    print(" recu:",xo)
+    #print("inputstr:", input_str,"attendu:", outputstr)
+    #print(" recu:",xo)
     if res:
         feedback.addTestSuccess(testname, xo, outputstr )
     else:
@@ -135,5 +131,7 @@ if __name__=="__main__":
    fb=feedback2.FeedBack()
    runsolucetests(lestest,fb)
    print(fb.render())
+
+
 
 

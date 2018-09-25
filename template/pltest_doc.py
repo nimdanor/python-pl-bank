@@ -40,7 +40,9 @@ class PlRunner(doctest.DocTestRunner):
             compile(self.student,"Votre code",'exec')
             exec(self.student, dic)
         except SyntaxError as e:
-            self.fb.addTestSyntaxError(name,subnlbybr(traceback.format_exc(limit=0,chain=False)),"Compilation")
+            self.fb.addTestSyntaxError(name,subnlbybr(traceback.format_exc(limit=0,chain=False))," Syntaxe ")
+        except Exception as e:
+            self.fb.addTestSyntaxError(name,subnlbybr(traceback.format_exc(limit=0,chain=False))," Exception ")
         else:
             test = doctest.DocTestParser().get_doctest(self.pltest, dic, 'votre travail', 'foo.py', 0)
             self.run(test)
@@ -82,9 +84,9 @@ class PlRunner(doctest.DocTestRunner):
         sortie = self.testtitle(example.source)
         self.total += 1
         if not sortie :
-            self.fb.addTestError("Erreur !",subnlbybr(traceback.format_exc(limit=3)),"")
+            self.fb.addTestError("Erreur !","<br>".join(traceback.format_exception(exc_info[0],exc_info[1],exc_info[2],limit=1)),"")
         else :
-            self.fb.addTestError(sortie+": en erreur ! ", subnlbybr(traceback.format_exc(limit=3)), "")
+            self.fb.addTestError(sortie+": en erreur ! ", "<br>".join(traceback.format_exception(exc_info[0],exc_info[1],exc_info[2],limit=1)), "")
 
     def summarize(self):
         self.fb.doTextOutput()

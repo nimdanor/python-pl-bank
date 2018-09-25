@@ -3,12 +3,12 @@ author=Dominique Revuz
 name=sisi003.pl
 title= Si  Sinon  
 tag= input|else|if|elif
-template=/python/0PLG/soluce.pl
+template=/template/soluce.pl
 text==
 ## IF ELIF ELSE
 Ecrire un programme qui demande à l’utilisateur deux entiers a et b par exemple:
-	3
-	4
+	3  
+	4  
 
 Et qui affiche  
 	a plus grand que b  
@@ -23,26 +23,28 @@ Dans l'exemple cela affiche :
 
 ==
 
+code==
+# ne pas modifier
+a,b=input().split(' ')
+a=int(a)
+b=int(b)
+# Ecrire a partir d'ici 
 
-
-input0==
-12
-66
 ==
 
-input1==
-12
-12
-==
-input2==
--12
--66
+
+plsoluce==
+Grand |12 66
+Egaux |77 77
+Petit |66 23
 ==
 
 
 soluce==
-a=int(input())
-b=int(input())
+a,b=input().split(' ')
+a=int(a)
+b=int(b)
+
 if a > b:
 	forma="%d est plus grand que %d" 
 elif a < b :

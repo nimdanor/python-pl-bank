@@ -21,8 +21,8 @@ if __name__ == "__main__":
 
     from pltest_doc import PlRunner
     dic = get_context()
-    if "pltest" not in dic and "pltest0" not in dic:
-        print("No pltest neither pltest0-n  defined change template", file=sys.stderr)
+    if "pltest" not in dic and "pltest1" not in dic:
+        print("No pltest neither pltest1-n  defined change template", file=sys.stderr)
         sys.exit(1)
     pltest = dic['pltest']
     import feedback2
@@ -32,7 +32,6 @@ if __name__ == "__main__":
     a, b = tester.runpltest(1)
     i=1
     while "pltest"+str(i) in dic and a==100:
-        #outstr += "<h3> Test suite "+str(i)+"</h3>"+b
         outstr += b
         testi = PlRunner(student,dic["pltest"+str(i)])
         a, b = testi.runpltest(i+1)

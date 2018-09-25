@@ -1,4 +1,5 @@
 
+title= Test du template/soluce.pl
 
 # ceci est un exercice pour les tests qui permet de verifier le template soluce.pl
 template=/template/soluce.pl
@@ -13,24 +14,31 @@ pour la chainei cela fait une failure et pour error cela fait une erreur
 ==
 
 
-soluce==
+code==
 x=input()
 if x=="success":
    print(x)
 if x=="failure":
    print("NON c'est pas ca")
 if x=="error":
-   print(x/0)
+   print(1/0)
 ==
 
-code==
+soluce==
 # ne pas modifier ce code il permet le test
 x=input()
 print(x)
 ==
 
 plsoluce==
-un success|success
-ce test iproduit une failure|failure
+un test quoi doit marche : |success
+ce test produit une failure|failure
 ce test produit une erreur |error
 ==
+
+Xplsoluce==
+un success ? |success
+un test quoi doit marcher : |success
+un  autre test quoi doit marcher : |success
+==
+
