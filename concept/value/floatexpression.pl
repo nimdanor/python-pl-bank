@@ -3,9 +3,15 @@
 
 # extends=/template/simplestring.pl
 ## temporaire couper ici
+
+@ /builder/before.py [builder.py]
+@ /utils/sandboxio.py
+@ /grader/evaluator.py [grader.py]
+
+
 form==
 <div class="input-group">
-    <input id="form_txt_answer"  class="form-control" placeholder="" style="weigth:150" required>
+    <input id="form_calcul"  value="{{ answers__.calcul}}" class="form-control" placeholder="" style="weigth:150" required>
 </div>
 ==
 ## temporaire couper ici
@@ -13,6 +19,8 @@ form==
 tag=float|const|expression
 
 title= Un calcul de change en Flotant (float)
+
+oneshot=False
 
 before==
 import random
@@ -38,8 +46,8 @@ la convertion qu'il doit appliquer est de {} {} pour 1 EUR (euro).
 """.format(cur2,symbols[cur2],rates[cur2], cur2)
 
 text +="""
-Question combien a t'il de {} a l'arrivee ?
-Ecrivez l'expression qu'il faut ecrire ou directement le resultat.
+Question combien a t'il de {} à l'arrivee ?
+Ecrivez l'**expression** qu'il faut écrire ou directement le **résultat**.
 """.format(cur2)
 
 text += '''
@@ -51,11 +59,19 @@ Remarque si souhaitez connaitre le nom en francais de ces monaies je vous propos
 res= 1000/rates[cur1]*rates[cur2]
 ==
 
+
+
 evaluator==
-ret = response['answer']
+from sandboxio import *
+d=get_answers()
+
+ret = d['calcul']
 
 def myround(x, base=5):
     return int(base * round(float(x)/base))
+
+if not ret:
+    ret ="0.0"
 
 try:
     ret=float(ret)
@@ -63,12 +79,12 @@ try:
 except:
     ret=eval(ret)
 
-if ret == res:
-    grade = True, " joli calcul !!\n soit "+str(res)+" "+cur2+" soit "+str(myround(1000/rates[cur1]))+" euros !"
+if  -0.00001 < ret - res < 0.0001:
+    grade = True, '''<div class="btn-success"> joli calcul !!<br> soit '''+str(res)+" "+cur2+" soit "+str(myround(1000/rates[cur1]))+" euros ! </div>"
 else:
     if res > ret:
-        grade = False, " le calcul doit exact a 7 decimales !! et c'est plus grand "
+        grade = False, '''<div class="btn-danger"> le calcul doit exact a 7 decimales !! et c'est plus grand </div>'''+str(res)+" "+str(ret)
     else:
-        grade = False, " le calcul doit exact a 7 decimales !! et c'est plus petit "
+        grade = False, '''<div class="btn-danger"> le calcul doit exact a 7 decimales !! et c'est plus petit </div>'''+str(res)+" "+str(ret)
 ==
 
