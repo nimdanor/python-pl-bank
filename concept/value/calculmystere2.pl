@@ -1,9 +1,9 @@
 title=Calcul Mystere II
 
+template=/template/simpleeval.pl
 
 text==
 La variable a est initialise avec la valeur 2.
-
 
 La question est quelle est la valeur de la variable p a la fin de la suite d'instructions suivante:
 
@@ -60,13 +60,5 @@ except:
         grade= False, " Formule Incorrecte"
 
 ==
-
-
-
-
-
-
-
-
 
 
