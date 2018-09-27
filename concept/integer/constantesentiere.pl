@@ -6,6 +6,7 @@
 
 tag=constants|integer|base
 
+template=/template/simpleeval.pl
 
 title= Constantes entiere
 
@@ -13,10 +14,11 @@ before=@ intvalues.py
 evaluator=@ intvalues.py
 
 evaluator+=
-b,t = check(response['answer'], V,B)
-t= t+" "+ str(V)+"  "+str(B)
-grade= b,t
-
+b,t = check(response['txt_answer'], V,B)
+if b:
+    grade=100,"<div class=btn-success>"+t+"</div>"
+else:
+    grade=0,"<div class=btn-danger>"+t+"</div>"
 ==
 
 
@@ -45,7 +47,7 @@ import time
 random.seed(seed)
 
 B=random.choice([2,8,16])
-V=random.randint(2,17)
+V=B+random.randint(2,5)
 text += "Ecrivez la valeur {} en base {} ({})".format(V,B,basename(B))
 
 ==

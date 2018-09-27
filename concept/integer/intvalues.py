@@ -51,7 +51,7 @@ def check(string, value, base = 10 ):
         (True, 'excellent la valeur est bonne et la base est bien Octale')
         '''
         rvalue, sbase = getbase(string)
-        print("value {} base {}".format(rvalue,base))
+        #print("value {} base {}".format(rvalue,base))
         if not sbase :
             return False, "ce n'est pas un entier"
         else:
@@ -64,6 +64,7 @@ def check(string, value, base = 10 ):
                     return False, "la base est bien " + basename(base) + " mais la valeur en base decimale "+ str(rvalue) + " est incorrecte"
                 else:
                     return False, " je ne sais pas quoi faire de votre reponse "
+
 
 
 
