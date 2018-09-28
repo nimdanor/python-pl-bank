@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # coding: utf-8
-import sys, json, jsonpickle, time
+import sys, jsonpickle
 from sandboxio import output, get_context, get_answers
+
 
 missing_evaluator_stderr = """\
 The key 'evaluator' was not found in the context.
@@ -24,21 +25,28 @@ if __name__ == "__main__":
     if "pltest" not in dic and "pltest1" not in dic:
         print("No pltest neither pltest1-n  defined change template", file=sys.stderr)
         sys.exit(1)
-    pltest = dic['pltest']
-    import feedback2
+    if 'stopfirsterror' in dic:
+        stop=bool(dic['stopfirsterror'])
+    else:
+        stop=False
     student = get_answers()['answer']
     outstr=""
-    tester = PlRunner(student,pltest)
-    a, b = tester.runpltest(1)
+    if "pltest" in dic:
+        pltest = dic['pltest']
+        tester = PlRunner(student,pltest)
+        a, b = tester.runpltest(1)
+    else:
+        a,b= True, ""
     i=1
-    while "pltest"+str(i) in dic and a==100:
+    while "pltest"+str(i) in dic and (a or stop ) :
         outstr += b
         testi = PlRunner(student,dic["pltest"+str(i)])
         a, b = testi.runpltest(i+1)
         i=i+1
 
     outstr +=  b
-
+    if "feedback" in dic: # FIXME feedback devrai être un dictionnaire.
+        outstr += dic["feedback"]
     output(a,outstr)
 
 
