@@ -19,18 +19,36 @@ if __name__ == "__main__":
                + "Usage: python3 grader.py [input_json] [output_json] [answer_file] [feedback_file]")
         print(msg, file=sys.stderr)
         sys.exit(1)
-
+    dic=get_context()
     if 'pairs' not in dic:
         print(" La balise 'pairs' obligatoire n'est pas définie dans votre exercice", file=sys.stderr)
         sys.exit(1)
-
+    a=0
+    total = len(dic['pairs'])
     studentdic = get_answers()
-
-    dic['pairs']
-
-    if "feedback" in dic: # FIXME feedback devrai être un dictionnaire.
-        outstr += dic["feedback"]
-
-    output(a,outstr)
+    for i,(x,b) in enumerate(dic['pairs']):
+        q='answer_'+str(i)
+        if b:
+            if q in studentdic:
+                if studentdic[q][0]=='on':
+                    a+= 1
+        else:
+            if q not in studentdic:
+                a += 1
+    grade=(a*100)/total
+    dic['grade']=grade
+    if "feedback" in dic: 
+        import jinja2
+        if a==total:
+            if 'success' in dic["feedback"]:
+                outstr = jinja2.Template(dic["feedback"]['success']).render(dic)
+            else:
+                outstr = '<div class="btn-success">  Bravo ! </div>'
+        else:
+            if 'failure' in dic["feedback"]:
+                outstr = jinja2.Template(dic["feedback"]['failure']).render(dic)
+            else:
+                outstr = '<div class="btn-danger">  Raté ! '+ str(a)+"/"+str(total)+ '</div>'
+    output(grade,outstr)
 
 

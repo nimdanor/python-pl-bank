@@ -1,6 +1,5 @@
-import balise
 
-import random
+import random,sys
 
 def testdef(balise):
     # type: (str) ->
@@ -9,23 +8,23 @@ def testdef(balise):
         sys.exit(1)
 
 def randomNfromlist(n,l):
-    if not 0< n < 100 or  len(l)< n::
+    if not 0< n < 100 or  len(l)< n:
         print(" illegale value of n in function randomNfromlist ", file=sys.stderr)
         sys.exit(1)
-    if len(l)== n :
-        return l
-    random.shuffle(l)
-    return l[0:n]
+    i=l[:]
+    random.shuffle(i)
+    return i[0:n]
 
 
 
 
-testdef("good")
-testdef("bad")
+#testdef("good")
+#testdef("bad")
 
 if good.endswith("\n\n"):
     good=good[0:-1]
     print(" trailing \n")
+
 if bad.endswith("\n\n"):
     bad=bad[0:-1]
     print(" trailing \n")
@@ -35,17 +34,21 @@ lb= bad.split("\n")
 
 lpairs=[]
 for x in lg:
-    lpairs.append((x,True))
+    if x:
+        lpairs.append((x,True))
 for x in lb:
-    lpairs.append((x,False))
+    if x:
+        lpairs.append((x,False))
 
 
 if "nb" not in globals():
-    pairs=lpairs
+    pairs=lpairs[:]
 else:
-    pairs  = randomNfromlist(nb,lpairs)
+    pairs  = randomNfromlist(int(nb),lpairs)
 
-form = """<div class="input-group">"""
-for x,b in pairs:
-    form += """<input id="form_answer" name="""" +x+""" type="checkbox"  placeholder="" required>"""+x+"<br>"
-form += "</div>"
+form = """<div class="input-group"><table>"""
+for i,(x,b) in enumerate(pairs):
+    form += """<TR><td><input id="form_answer_"""+str(i)+"""\"  type="checkbox"  placeholder="" required>"""+x+"</td></TR>"
+form += "</table></div>"
+
+

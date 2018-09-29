@@ -5,20 +5,36 @@ text= Cochez les affirmations correctes.
 
 
 good==
-Dominique est sympa
-Dominique est beau
-Dominique est modèste
-Dominique est disorthographique
+La lune tourne
+0 est plus petit que 1 
+Mars est dite: la planète rouge 
+le sucre est blanc
+le cheval blanc de Henri VI est blanc
 ==
 
+nb=8
 
 bad==
-Dominique est champion du monde de water polo
-Le haut est en bas
-Ceci est pas faux
-Cette ligne avec guillemets " et apostrophes ' superieur < et inféieur > pour cent %
+La terre est plate 
+Le soleil tourtne autour de la terre 
+Les satélites de la lune sont rouges.
+1 est plus petit que 0
+
 ==
 
+barem=reponsescorrecte
+# uniquement les vraies
 
-builder=@ qcm_build.py
-evaluator=@qcm_evaluator.py
+form=""
+
+feedback.success="<div class="btn-success"> Voila votre resultat : {{  grade }} </div>"
+
+feedback.failure="<div class="btn-danger"> Voila votre resultat : {{  grade }} </div>"
+
+
+builder=@ /builder/before.py
+before=@ qcm_build.py
+grader=@qcm_evaluator.py
+@ /utils/sandboxio.py
+
+
