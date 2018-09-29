@@ -3,6 +3,31 @@
 import sys, jsonpickle
 from sandboxio import output, get_context, get_answers
 
+def calculategrade(enonce, studentdic, dic):
+    """
+    :param enonce: [(" affirmation1",True),("affirmation2",False],(" affirmation3",True),("affirmation4",False],]
+    :param studentdic: ["anwser_1":['on'], "anwser_2":['on']]
+    :return:
+    if unscrosfalse :
+        2,4  (answer1 and answer4 correct over 4 possible points
+    else:
+        1,2 answer1 correct and answer3 not correct
+    """
+    uncrosedfalse = ( 'uncrosedfalse' in dic and dic['uncrosedfalse'] )
+
+    total = 0
+    for i,(x,b) in enumerate(enonce):
+        q='answer_'+str(i)
+        if b and  q in studentdic:
+            total += 1
+            a+= 1
+        elif uncrosedfalse:
+            total += 1
+            if q not in studentdic:
+                a += 1
+     return a, total
+
+
 
 missing_evaluator_stderr = """\
 The key 'evaluator' was not found in the context.
@@ -26,17 +51,8 @@ if __name__ == "__main__":
     a=0
     total = len(dic['pairs'])
     studentdic = get_answers()
-    for i,(x,b) in enumerate(dic['pairs']):
-        q='answer_'+str(i)
-        if b:
-            if q in studentdic:
-                if studentdic[q][0]=='on':
-                    a+= 1
-        else:
-            if q not in studentdic:
-                a += 1
-    grade=(a*100)/total
-    dic['grade']=grade
+    a, t= calculategrade(dic(['pairs']),studentdic)
+    dic['grade']= (100*a)/t
     if "feedback" in dic: 
         import jinja2
         if a==total:
