@@ -3,7 +3,7 @@
 import sys, jsonpickle
 from sandboxio import output, get_context, get_answers
 
-def calculategrade(enonce, studentdic, dic):
+def calculategrade(enonce, studentdic, uncrosedfalse):
     """
     :param enonce: [(" affirmation1",True),("affirmation2",False],(" affirmation3",True),("affirmation4",False],]
     :param studentdic: ["anwser_1":['on'], "anwser_2":['on']]
@@ -13,21 +13,52 @@ def calculategrade(enonce, studentdic, dic):
     else:
         1,2 answer1 correct and answer3 not correct
     """
-    uncrosedfalse = ( 'uncrosedfalse' in dic and dic['uncrosedfalse'] )
-
+    
+    correct=0
     total = 0
     for i,(x,b) in enumerate(enonce):
         q='answer_'+str(i)
-        if b and  q in studentdic:
+        if b :
             total += 1
-            a+= 1
+            if q in studentdic:
+                correct+= 1
         elif uncrosedfalse:
             total += 1
             if q not in studentdic:
-                a += 1
-     return a, total
+                correct += 1
+    return correct, total
+
+def redTd(b,txt):
+    if not b:
+        txt = '<del>'+txt+'</del>'
+    return '<TR><TD><div class="btn-danger"> '+txt+' </div></TD</TR>'
+    
+def greenTd(b,txt):
+    if not b:
+        txt = '<del>'+txt+'</del>'
+    return '<TR><TD><div class="btn-success"> '+txt+' </div></TD</TR>'
 
 
+
+def createshowanswer(enonce, studentdic):
+    """
+    :param enonce: [(" affirmation1",True),("affirmation2",False],(" affirmation3",True),("affirmation4",False],]
+    :param studentdic: ["anwser_1":['on'], "anwser_2":['on']]
+    :return:
+       a html table with green TD if crosed and good or not crosed and bad
+       else a red TD 
+    """
+    
+    form="<table>"
+    for i,(x,b) in enumerate(enonce):
+        q='answer_'+str(i)
+        if (b and q in studentdic) or (not b and not q in studentdic):
+            form += greenTd(b,x)
+        else:
+            form +=redTd(b,x)
+            
+    form +="</table>"
+    return form
 
 missing_evaluator_stderr = """\
 The key 'evaluator' was not found in the context.
@@ -49,13 +80,16 @@ if __name__ == "__main__":
         print(" La balise 'pairs' obligatoire n'est pas définie dans votre exercice", file=sys.stderr)
         sys.exit(1)
     a=0
-    total = len(dic['pairs'])
+    
     studentdic = get_answers()
-    a, t= calculategrade(dic(['pairs']),studentdic)
-    dic['grade']= (100*a)/t
+    a, t= calculategrade(dic['pairs'],studentdic,('uncrosedfalse' in dic and dic['uncrosedfalse'] ))
+    grade= (100*a)/t
+    dic['evaluation']= grade
     if "feedback" in dic: 
         import jinja2
-        if a==total:
+        if dic["feedback"]=="show":
+            dic['form'] = createshowanswer(dic['pairs'],studentdic)
+        if a==t:
             if 'success' in dic["feedback"]:
                 outstr = jinja2.Template(dic["feedback"]['success']).render(dic)
             else:
@@ -64,7 +98,9 @@ if __name__ == "__main__":
             if 'failure' in dic["feedback"]:
                 outstr = jinja2.Template(dic["feedback"]['failure']).render(dic)
             else:
-                outstr = '<div class="btn-danger">  Raté ! '+ str(a)+"/"+str(total)+ '</div>'
-    output(grade,outstr)
+                outstr = '<div class="btn-danger">  Raté ! '+ str(a)+"/"+str(t)+ '</div>'
+    
+    output(grade,outstr,dic)
+
 
 
