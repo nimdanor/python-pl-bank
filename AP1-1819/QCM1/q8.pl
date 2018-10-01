@@ -1,12 +1,12 @@
 
 template=/template/qcm_template.pl
 
-title=Question 5
+title= 8 pommes
 
 
 mybuild==
 import random
-chaine= random.choice(['pomme','banana','bannane','poire'])
+chaine= random.choice(['pomme','banana','banane','poire','ananas'])
 entier= random.randint(5,8)
 
 text=""" Qu'affiche le programme suivant :
@@ -31,14 +31,6 @@ good==
 ==
 
 bad==
-[*  Ceci est un commentaire  *]
-/*  Ceci est un commentaire */
-//  Ceci est un commentaire 
-@  Ceci est un commentaire 
-@@  Ceci est un commentaire  @@
-:param  Ceci est un commentaire 
-REM  Ceci est un commentaire 
-COMMENT:  Ceci est un commentaire 
 ==
 
 feedback=show

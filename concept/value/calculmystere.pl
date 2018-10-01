@@ -4,9 +4,9 @@ template=/template/simpleeval.pl
 
 
 basetext==
-La variable a est initialise avec la valeur 2.
+Si la variable **a** est initialisée avec la valeur 2.
 
-La question est quelle est la valeur de la variable p a la fin de la suite d'instructions suivante:
+Alors quelle est la valeur de la variable **p** à la fin de la suite d'instructions suivante:
 
 ==
 

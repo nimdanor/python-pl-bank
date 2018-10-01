@@ -1,8 +1,12 @@
 
 template=/template/qcm_template.pl
 
-title=Question 5
+title=Question 6 
+doc==
 
+Concatenation
+==
+tag=concatenation|str
 
 text==
 Qu'affiche le code suivant :

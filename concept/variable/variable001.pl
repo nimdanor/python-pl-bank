@@ -4,6 +4,7 @@ title= Initialisation d'une variable.
 tag=variable
 
 template=/template/pltest.pl
+@ /utils/sandboxio.py
 
 text==
 
@@ -17,7 +18,7 @@ pim,pam,pom=0,0,0
 
 # comme ca cela se passera bien
 pltest==
->>> pim 
+>>> pim # Pim vaut un
 1
 >>> pam == pam  #
 True
@@ -27,7 +28,7 @@ True
 3
 ==
 
-editor.fontsize=24px
+editor.fontsize=12px
 
-@ /utils/sandboxio.py
+
 

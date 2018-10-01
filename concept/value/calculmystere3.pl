@@ -27,7 +27,7 @@ for x in range(0,random.randint(2,4)):
     r=random.randint(0,10)
     if r <3 :
         formula += "    p *= a \n"
-        p += p * a
+        p *=  a
     elif r <7:
         formula += "    p = p * a \n"
         p = p * a
@@ -50,21 +50,23 @@ form=@ /forms/simpletextform.html
 
 evaluator==
 ret = response['txt_answer']
-if "p" in ret or "a" in ret:
-    grade= False,"Une expression sans utiliser ni a ni p svp."
+if not ret:
+    grade= False,'<div class="btn-danger"> Le néant n\'est pas une solution .</div>'
+elif "p" in ret or "a" in ret:
+    grade= False,'<div class="btn-danger">Une expression sans utiliser ni a ni p svp.</div>'
 else:
     try:
         cal=float(ret)
-        grade = False," Essai encore, mais sous forme d'une expression simple et pas sous forme numerique."
+        grade = False,'<div class="btn-danger"> Essai encore, mais sous forme d\'une expression simple et pas sous forme numerique.</div>'
     except:
         try:
-            cal=eval(ret)
+            cal=float(eval(ret))
             if cal == res:
                  grade = True,'<div class="btn-success"> Bien joué ! '+str(ret)+" = " +str(res)+'</div>'
             else:
-                grade = False,'<div class="btn-danger">  Raté : réessayez </div>'
+                grade = False,'<div class="btn-danger">  Raté : réessayez  '+str(ret)+" = " +str(res)+'</div>'
         except :
-            grade= False,'<div class="btn-danger"> Formule Incorrecte</div>'
+            grade= False,'<div class="btn-danger"> Formule Incorrecte </div>'
 ==
 
 

@@ -50,4 +50,4 @@ before=@ qcm_build.py
 grader=@qcm_evaluator.py
 @ /utils/sandboxio.py
 
-
+settings.allow_reroll=doit

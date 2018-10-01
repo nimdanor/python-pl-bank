@@ -1,7 +1,7 @@
 
 template=/template/qcm_template.pl
 
-title=Question 5
+title=Commentaires 7
 
 
 text= Indiquez les lignes qui sont des commentaires en python :
