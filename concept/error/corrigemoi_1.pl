@@ -3,7 +3,7 @@ author=Dominique Revuz
 tag=error
 title= Corrige Moi !
 name= x ?
-template=/python/0PLG/soluce.pl
+template=/template/soluce.pl
 text==
 
 Le programme python si dessous contient une erreur corrigez la pour passer à l'exercice suivant.
@@ -24,4 +24,7 @@ z=x1+y2
 print(z)
 ==
 
-expectedoutput=7
+plsoluce==
+Correction du Nom de variable | rien à lire
+==
+

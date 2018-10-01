@@ -2,7 +2,7 @@ title= ceci est une feuille de test
 
 introduction==
 
-Voici quelque exercices sur les valeurs, les variables, les conditionnelles, et les erreurs classique de syntaxe.
+Voici quelque exercices sur les valeurs, les variables, les conditionnelles.
 
 Amusez vous bien.
 
@@ -27,7 +27,7 @@ Amusez vous bien.
 @ /concept/variable/variable003.pl
 @ /concept/variable/littandtypes.pl 
 
-
+skip==
 @ /concept/error/corrigemoi_1.pl
 @ /concept/error/corrigemoi_2.pl
 @ /concept/error/corrigemoi_3.pl
@@ -35,4 +35,5 @@ Amusez vous bien.
 @ /concept/error/corrigemoi_5.pl
 @ /concept/error/corrigemoi_6.pl
 @ /concept/error/corrigemoi_7.pl
+==
 
