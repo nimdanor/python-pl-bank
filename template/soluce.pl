@@ -11,21 +11,11 @@ doc==
 ==
 
 @ soluceevaluator.py          [grader.py] # le as de python import toto as titi
-
 @ gradesoluce.py
-
-
 @ /utils/sandboxio.py
-
 builder=@ /template/donobuild.py
-
-editor.fontsize=14px
-
-
 @ feedback2.py
 @ template.html
-
-
 
 
 # une interface standard d'exercice avec un editeur pour la réponse
