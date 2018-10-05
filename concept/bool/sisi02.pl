@@ -25,6 +25,13 @@ Une entrée Négative | -66
 Une entrée Nulle | 0
 ==
 
+code==
+n=int(input("Saisissez un entier?"))
+
+print("Positif.")
+print("Négatif.")
+print("Nul.")
+==
 
 soluce==
 n=int(input("Saisissez un entier?"))
@@ -35,4 +42,5 @@ elif n< 0:
 else:
 	print("Nul.")
 ==
+
 

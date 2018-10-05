@@ -3,7 +3,7 @@ author=Dominique Revuz
 name=sisi004.pl
 title= Si  Sinon  
 tag= input|else|if|elif|bool|and|or|paranthesis
-template=/python/0PLG/template.pl
+extends=/template/soluce.pl
 text==
 ## IF ELIF ELSE
 Ecrire un programme qui demande à l’utilisateur trois entiers a,b et c par exemple:
@@ -19,30 +19,25 @@ Sinon affiche **NON**
 
 ==
 
+code==
+a,b,c=input().split(' ')
+a,b,c=int(a),int(b),int(c)
 
-
-input0==
-12
-66
-23
+print("OUI")
+print("NON")
 ==
 
-input1==
-12
-12
-12
+plsoluce==
+a=12 b=66 c=23  |12 66 23
+a=12 b=12 c=12 |12 12 12
+a=1 b=6 c=123 |1 6 123
+a=66 b=77 c=88 |66 77 88
 ==
-input2==
-66
-12
-700
-==
-
 
 soluce==
-a=int(input())
-b=int(input())
-c=int(input())
+a,b,c=input().split(' ')
+a,b,c=int(a),int(b),int(c)
+
 if (a<12 and b <12) or c<20 :
     print("NON")
 else:

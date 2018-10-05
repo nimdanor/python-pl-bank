@@ -1,9 +1,14 @@
 # Copyright 2017 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz 
 name=condbool.pl
+
+
 title= Condition booléenne  # N'oubliez pas de remplir ce champs svp
 tag= input|boolean|if # N'oubliez pas de remplir ce champs svp
-template=/template/coding.pl
+template=/template/soluce.pl
+
+builder=@ /builder/before.py
+
 text==
 # Super Fly 
 Super Fly est une compagnie aerienne a bas cout qui fait payer un supplement
@@ -19,12 +24,11 @@ Si son bagage pèse plus de {{poid}} kilos, le programme affichera le message :
 Il y a un supplément de {{supplement}} euros pour un bagage de plus de {{poid}} kilos.
 ```
 
-Tests: {{input0}},{{input1}},{{input2}}
 ==
 
 before==
 import random 
-
+random.seed(seed)
 prompt="Entrez le poid entier du bagage :"
 poid=random.choice([10,20,30,40])
 supplement=random.choice([10,20,30,40])
@@ -40,10 +44,10 @@ if entree> {}:
 
 '''.format(code, poid, affiche)
 
-
-input0=poid+5
-input1=poid-5
-input2=poid*poid
+plsoluce=""" Moins |{} 
+Plus |{}
+Beaucouo plus | {}
+""".format(poid-5,poid+5,poid*poid)
 
 ==
 # Choisir pltest ou soluce ou expectedoutput

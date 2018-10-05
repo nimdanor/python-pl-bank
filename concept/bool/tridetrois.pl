@@ -4,21 +4,22 @@ name=Tri de trois
 title=Tri de trois
 tag= if|else
 
-template=/python/0PLG/template.pl
+extends=/template/soluce.pl
 text==
 
-# Tri de Trois
+### Plus difficile 
 
-Votre programme doit saisir trois entiers puis les afficher dans l'ordre.
+Votre programme doit saisir trois entiers puis les afficher dans l'ordre, un par ligne.
 
 ==
 
 # Choisir pltest ou soluce ou expectedoutput
 code==
 # voici trois entiers a afficher dans l'ordre croissant 
-a=int(input())
-b=int(input())
-c=int(input())
+a,b,c=input().split(' ')
+a,b,c=int(a),int(b),int(c)
+# modifier dessous 
+
 
 print(a)
 print(b)
@@ -26,57 +27,23 @@ print(c)
 ==
 
 soluce==
-a=input()
-b=input()
-c=input()
-
-print("\n".join(sort([a,b,c])))
+a,b,c=input().split(' ')
+a,b,c=int(a),int(b),int(c)
+l=[a,b,c]
+ss= sorted(l)
+for x in ss:
+    print(x)
 ==
 
 
-
-input0==
-1
-2
-3
+plsoluce==
+Test1 |1 17 8
+Test2 |77 5 6
+Test3 |18 17 8
+Test4 |1 1 0
+Test5 |1 4 8
 ==
 
-output0==
-1
-2
-3
-==
-input1==
-2
-3
-1
-==
-
-output1==
-1
-2
-3
-==
-input2==
-3
-1
-7
-==
-output2==
-1
-3
-7
-==
-input3==
-6
-8
-4
-==
-output3==
-4
-6
-8
-==
 
 
 
