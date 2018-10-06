@@ -33,7 +33,7 @@ prompt="Entrez le poid entier du bagage :"
 poid=random.choice([10,20,30,40])
 supplement=random.choice([10,20,30,40])
 affiche="Il y a un supplément de {} euros pour un bagage de plus de {} kilos.".format(supplement,poid)
-code = '''entree= int(input(\"{}\")\n\n\"{}\"'''.format(prompt,affiche)
+code = '''entree= int(input(\"{}\"))'''.format(prompt)
 
 soluce='''
 {}
@@ -41,6 +41,9 @@ if entree> {}:
     print("{}")
 
 '''.format(code, poid, affiche)
+
+code += '''\n\n\"{}\"'''.format(affiche)
+
 
 plsoluce=""" Moins |{} 
 Plus |{}
@@ -51,6 +54,7 @@ Beaucouo plus | {}
 # Choisir pltest ou soluce ou expectedoutput
 
 expectedoutput=Il y a un supplément de 30 euros pour un bagage de plus de 20 kilos.
+
 
 
 

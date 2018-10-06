@@ -37,11 +37,12 @@ for x in ss:
 
 
 plsoluce==
-Test1 |1 17 8
-Test2 |77 5 6
-Test3 |18 17 8
-Test4 |1 1 0
-Test5 |1 4 8
+Test1 b c a|10 17 8
+Test2 a c b|5 77 6
+Test3 c a b|18 8 17
+Test4 c b a|2 1 0
+Test5 a b c|1 4 8
+Test6 b a c|23 9 122
 ==
 
 
