@@ -32,10 +32,8 @@ random.seed(seed)
 prompt="Entrez le poid entier du bagage :"
 poid=random.choice([10,20,30,40])
 supplement=random.choice([10,20,30,40])
-code = '''entree= int(input(\"{}\"))'''.format(prompt)
 affiche="Il y a un supplément de {} euros pour un bagage de plus de {} kilos.".format(supplement,poid)
-
-
+code = '''entree= int(input(\"{}\")\n\n\"{}\"'''.format(prompt,affiche)
 
 soluce='''
 {}

@@ -1,4 +1,4 @@
-title= ceci est une feuille de test
+title= Valeurs Variables et Conditionnelles
 
 introduction==
 
@@ -10,9 +10,9 @@ Amusez vous bien.
 
 @ /concept/bool/bonlcond.pl
 @ /concept/bool/sisi01.pl
-@/concept/bool/sisi02.pl
-@/concept/bool/sisi03.pl
-@/concept/bool/sisi04.pl
+@ /concept/bool/sisi02.pl
+@ /concept/bool/sisi03.pl
+@ /concept/bool/sisi04.pl
 @ /concept/bool/tridetrois.pl
 
 

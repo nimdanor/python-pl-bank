@@ -38,11 +38,10 @@ soluce==
 a,b,c=input().split(' ')
 a,b,c=int(a),int(b),int(c)
 
-if (a<12 and b <12) or c<20 :
-    print("NON")
-else:
+if (a>12 and b >12) or c<20 :
     print("OUI")
+else:
+    print("NON")
 ==
-
 
 

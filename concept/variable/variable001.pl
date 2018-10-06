@@ -28,7 +28,6 @@ True
 3
 ==
 
-editor.fontsize=12px
 
 
 

@@ -3,7 +3,7 @@
 
 #  ceci est un fichier de test oublier le 
 
-template=plbank:/gift/template/truefalse_template.pl
+extends=/template/qcm_template.pl
 
 
 author=Moi Meme # Changer moi cela s'il vous plait ;)
@@ -17,7 +17,8 @@ Irma est le nom d'un Cyclone qui a parcourru les Caraibes et la Floride en 2017 
 
 ==
 
-answer=True
+good=Vrai
+bad=Faux
 
 feedback=Excellent quelle mémoire !
 

@@ -3,6 +3,8 @@
 import sys, json, jsonpickle, time
 from sandboxio import output, get_context, get_answers
 
+from gradesoluce import *
+
 missing_evaluator_stderr = """\
 The key 'evaluator' was not found in the context.
 When using this grader, the PL must declare a script inside a key 'evaluator'. This script have
@@ -19,7 +21,7 @@ if __name__ == "__main__":
         print(msg, file=sys.stderr)
         sys.exit(1)
 
-    from gradesoluce import *
+
     dic = get_context()
     if "plsoluce" not in dic:
         print("No plsoluce in dic  necessary for this template " , file=sys.stderr)

@@ -86,7 +86,8 @@ def unitTestWithOutput(testname, studentfilename, outputstr, input_str, feedback
     if res:
         feedback.addTestSuccess(testname, xo, outputstr )
     else:
-        feedback.addTestFailure(testname, oc.output_difference(doctest.Example(" le test", outputstr), xo,0), "")
+        want,got = oc.output_difference(doctest.Example(" le test", outputstr), xo,0).split("Got:")
+        feedback.addTestFailure(testname,got,want[9:])
     return True
 
 
@@ -101,13 +102,16 @@ def runsolucetests(tests, feedback, studentfilename=None, solucefilename=None, f
     """
     studentfilename = studentfilename if studentfilename else "student.py"
     solucefilename = solucefilename if solucefilename else "soluce.py"
-    res = True
+    res = 0
     for name, input_str in tests:
-        res = res and  unitTestWithSoluce(name, studentfilename, solucefilename, input_str, feedback)
-        if not res and flags:
+        ok =  unitTestWithSoluce(name, studentfilename, solucefilename, input_str, feedback)
+        if not ok and flags:
            # FIXME break  # arret sur le premier tests invalide 
            pass
-    return res
+        if ok:
+            res += 1
+    
+    return 100*(res//tests)
 
 def runsOutputtests(tests, feedback, studentfilename=None, flags=0x1):
     """
@@ -118,12 +122,15 @@ def runsOutputtests(tests, feedback, studentfilename=None, flags=0x1):
     :return: 
     """
     studentfilename = studentfilename if studentfilename else "student.py"
-    res=True
+    res=0
     for name, input_str, output_str in tests:
-        res = res and  unitTestWithOutput(name, studentfilename, output_str, input_str, feedback)
-        if not res and flags:
+        ok=   unitTestWithOutput(name, studentfilename, output_str, input_str, feedback)
+        if not ok and flags:
             break  # arret sur le premier tests invalide 
-    return res
+        if ok:
+            res += 1
+            
+    return int(100*(res/len(tests)))
 
 if __name__=="__main__":
    lestest=[("premeir","success"),("bas beau","failure"),("Une erreur ","error"),]
@@ -131,6 +138,8 @@ if __name__=="__main__":
    fb=feedback2.FeedBack()
    runsolucetests(lestest,fb)
    print(fb.render())
+
+
 
 
 
