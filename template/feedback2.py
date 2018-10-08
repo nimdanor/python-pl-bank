@@ -48,6 +48,7 @@ class FeedBack():
         self.numtest = 0
         self.name = str(name)
         self.filename=filename
+        self.globalfeedback =""
 
     def addTestSuccess(self, text, got, want):
         """
@@ -97,6 +98,8 @@ class FeedBack():
         self.numtest += 1
         self.tests.append((SYNTAX, self.numtest, text, error, para))
 
+    def addGlobalFeedback(self,feedback):
+        self.globalfeedback += feedback
 
     def _doTextOutput(self):
             print(getOutout())
