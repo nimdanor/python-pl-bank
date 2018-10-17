@@ -13,7 +13,7 @@ title= Exercice Numero Un
  	
 text==
 
-Irma est le nom d'un Cyclone qui a parcourru les Caraibes et la Floride en 2017 (vrai/faux) ?
+Irma est le nom d'un Cyclone qui a parcouru les Caraibes et la Floride en 2017 (vrai/faux) ?
 
 ==
 
@@ -21,5 +21,6 @@ good=Vrai
 bad=Faux
 
 feedback=Excellent quelle mémoire !
+
 
 

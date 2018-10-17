@@ -11,21 +11,28 @@ def calculategrade(enonce, studentdic, uncrosedfalse):
     if unscrosfalse :
         2,4  (answer1 and answer4 correct over 4 possible points
     else:
-        1,2 answer1 correct and answer3 not correct
+        0,2 answer1 correct and answer3 not correct minus one point  max(0,sommeofcorrect)
     """
     
     correct=0
     total = 0
-    for i,(x,b) in enumerate(enonce):
-        q='answer_'+str(i)
-        if b :
-            total += 1
-            if q in studentdic:
-                correct+= 1
-        elif uncrosedfalse:
-            total += 1
-            if q not in studentdic:
-                correct += 1
+    if uncrosedfalse:
+        for i,(x,b) in enumerate(enonce):
+            q='answer_'+str(i)
+            if b :
+                total += 1
+                if q in studentdic:
+                    correct+= 1
+            else:
+                if q in studentdic:
+                    correct -=1
+        correct = max(0,correct)
+    else:
+        for i,(x,b) in enumerate(enonce):
+            q='answer_'+str(i)
+            if b == (q in studentdic):
+                    correct+= 1
+        total = len(enonce)
     return correct, total
 
 def redTd(b,txt):
@@ -101,6 +108,8 @@ if __name__ == "__main__":
                 outstr = '<div class="btn-danger">  Raté ! '+ str(a)+"/"+str(t)+ '</div>'
     
     output(grade,outstr,dic)
+
+
 
 
 

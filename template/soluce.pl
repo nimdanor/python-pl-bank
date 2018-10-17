@@ -21,4 +21,5 @@ builder=@ /template/donobuild.py
 # une interface standard d'exercice avec un editeur pour la réponse
 form=@ /python/form/editorform.html
 
+settings.allow_reroll=1
 
