@@ -1,12 +1,10 @@
 # ceci est un exercice Premier langage
 
-name=une fonction racine carre
+title=une fonction racine carre
 tag=math|exponentiation|parameter
-template=/python/0PLG/template
+extends=/template/pltest.pl
 piste=verte
 text==
-
-# Racine Carrée
 
 Ecrire une fonction **racinecarre** qui calcul la racine carré de son paramètre supposé positif ou nul.
 
@@ -31,3 +29,4 @@ pltest==
 >>> racinecarre(0)
 0.0
 ==
+

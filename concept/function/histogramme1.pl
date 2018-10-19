@@ -1,27 +1,26 @@
 # Copyright 2016 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz 
 name=histogramme de notes
-title=xx
+title=Histogramme des Notes 
 tag=function|list|branching
-template=/python/0PLG/template
+template=/template/pltest.pl
 text==
-
-# Histogramme des Notes 
-
 Lire sur une première ligne le nombre de notes N, puis sur la ligne suivante les N notes en question.
-'''
-10
-12.3 14.5 17.8 18 11.6 13.3 16.7 7
-'''
+
+    '''
+    10
+    12.3 14.5 17.8 18 11.6 13.3 16.7 7
+    '''
 La fonction printHistoListes une liste de notes comprises dans chaque intervals de longeur 2 entre 0 et 20. 
-'''
-[7]
-[11.6]
-[12.3, 13.3]
-[14.5]
-[17.8, 16.7]
-[18]
-'''
+
+    '''
+    [7]
+    [11.6]
+    [12.3, 13.3]
+    [14.5]
+    [17.8, 16.7]
+    [18]
+    '''
 ==
 
 pltest==
@@ -101,3 +100,4 @@ def printHistoListes(lst):
         print([18])
         print([20])
 ==
+

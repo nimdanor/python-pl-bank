@@ -3,7 +3,7 @@ author=Dominique Revuz
 name= Est Premier
 title= Premier Suivant   # N'oubliez pas de remplir ce champs svp
 tag=def|parameters|return # N'oubliez pas de remplir ce champs svp
-template=/python/0PLG/template.pl
+template=/template/pltest.pl
 text==
 
 
@@ -55,3 +55,4 @@ def premiersuivant(k):
 			return(k)
 
 ==
+

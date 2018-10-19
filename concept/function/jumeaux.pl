@@ -1,12 +1,10 @@
 # Copyright 2016 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz 
 name= Jumeaux
-title= Premier Jumeaux  # N'oubliez pas de remplir ce champs svp
+title= Nombres Premiers Jumeaux  # N'oubliez pas de remplir ce champs svp
 tag=def|parameters|return # N'oubliez pas de remplir ce champs svp
-template=/python/0PLG/template.pl
+template=/template/pltest.pl
 text==
-## Nombres Premiers Jumeaux
-
 
 Deux nombres premiers sont dits **jumeaux** s'ils ne diffèrent que de 2.
 

@@ -3,7 +3,7 @@ author=Dominique Revuz
 name=  Pim Pim Pim Pim
 title=  Pim Pim Pim Pim  # N'oubliez pas de remplir ce champs svp
 tag= def|return  # N'oubliez pas de remplir ce champs svp
-template=/python/0PLG/template.pl
+template=/template/pltest.pl
 
 taboo=print|join
 text==
@@ -27,13 +27,13 @@ text==
 pltest==
 >>> pim(0)
 'Pas de Pim'
->>> pim(1) # pas despace dans la solution 
+>>> pim(1) # pas d'espace dans la solution 
 'Pim'
->>> pim(1) # pas despace à la fin
+>>> pim(1) # pas d'espace à la fin
 'Pim'
 >>> pim(12) # plein de pimme 
 'Pim Pim Pim Pim Pim Pim Pim Pim Pim Pim Pim Pim'
->>> pim(-777) #vraiment négatif
+>>> pim(-777) # Vraiment négatif
 'Pas de Pim'
 ==
 
@@ -46,3 +46,4 @@ def pim(n):
 	else:
 		return("Pas de Pim")
 ==
+

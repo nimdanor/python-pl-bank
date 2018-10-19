@@ -1,10 +1,10 @@
 # Copyright 2016 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz
 ok=False 
-title=subsets.pl
+title=Sous ensembles
 name=Sous ensembles
 tag=function|set|sorted # N'oubliez pas de remplir ce champs svp
-template=/python/0PLG/template
+extends=/template/pltest.pl
 piste=rouge
 
 text==
@@ -47,3 +47,4 @@ toto==
 >>> sorted(subsets({"Toto","titi"})) # [[], ['Toto'],['titi'],  ['Toto', 'titi']]
  [[], ['Toto'], ['titi'], ['titi', 'Toto']]
 ==
+

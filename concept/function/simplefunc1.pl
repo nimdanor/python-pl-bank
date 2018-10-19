@@ -1,6 +1,6 @@
 author=dr
 title=Fizz Buzz 
-template=/python/0PLG/template.pl
+extends=/template/pltest.pl
 
 text==
 #  Fizz Buzz 
@@ -21,3 +21,4 @@ Fizz Buzz
 >>> fizzbuzz(11) # ni l'un ni l'autre 
 >>> 
 ==
+
