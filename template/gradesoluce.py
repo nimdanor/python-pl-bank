@@ -86,8 +86,14 @@ def unitTestWithOutput(testname, studentfilename, outputstr, input_str, feedback
     if res:
         feedback.addTestSuccess(testname, xo, outputstr )
     else:
-        want,got = oc.output_difference(doctest.Example(" le test", outputstr), xo,0).split("Got:")
-        feedback.addTestFailure(testname,got,want[9:])
+        r = oc.output_difference(doctest.Example(" le test", outputstr), xo,0)
+        if r.startswith("Expected:") and "Got:" in r :
+                want,got = r.split("Got:")
+                want= want[9:]
+        else:
+                want=r
+                got=""
+        feedback.addTestFailure(testname,got,want)
     return True
 
 
@@ -138,6 +144,8 @@ if __name__=="__main__":
    fb=feedback2.FeedBack()
    runsolucetests(lestest,fb)
    print(fb.render())
+
+
 
 
 

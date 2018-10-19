@@ -2,7 +2,7 @@
 author=Dominique Revuz 
 name= Function Voyelles
 title=None
-template=/python/0PLG/template.pl
+template=/template/pltest.pl
 text==
 # Appartient
 
@@ -11,7 +11,7 @@ Ecrire une fonction **voyelles** qui compte le nombre de voyelles (minuscules, s
 ==
 
 code==
-# les voyelles aeiouy
+# les voyelles :  aeiouy
 
 ==
 

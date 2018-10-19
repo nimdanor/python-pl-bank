@@ -3,7 +3,7 @@ author=Dominique Revuz
 name= Est Premier
 title= Est Premier   # N'oubliez pas de remplir ce champs svp
 tag=def|parameters|return # N'oubliez pas de remplir ce champs svp
-template=/python/0PLG/template.pl
+template=/template/pltest.pl
 text==
 
 
@@ -39,8 +39,9 @@ pltest==
 	True
 	>>> estpremier(65537)
 	True
-	>>> from random import randint
-	>>> estpremier(randint(1,1000)*randint(1,1000))
+	>>> from random import randint#
+	>>> x=randint(978,6000)
+	>>> estpremier(x*x)
 	False
 ==
 
@@ -52,3 +53,4 @@ def estpremier(p):
 			return False
 	return True
 ==
+

@@ -1,18 +1,19 @@
 # Copyright 2016 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz 
-name= Function Voyelles
-title=None
-template=/python/0PLG/template.pl
+title= Puissances Max
+template=/template/pltest.pl
 text==
-# Puissances Max
 
-Ecrire une fonction **pm** qui affiche sur une ligne les puissane maximal de 2 qui divise chaque nombre jusqu'a la valeur passée en argument.
+Ecrire une fonction **pm** qui recoit un argument entier **n** 
+qui affiche sur une ligne,  
+l'exposant de la puissance maximale de 2 qui divise chaque nombre de 1 à n.
 
 Par exemple:
 
-   >>> pm(15)
-   0,1,0,2,0,1,0,3,0,1,0,2,0,1,0 
+    >>> pm(15)  
+    0,1,0,2,0,1,0,3,0,1,0,2,0,1,0 
 
+$% 2^0 divise 1, 2^1 divise 2, 2^0 divise 3, etc %$
 
 ==
 
@@ -41,3 +42,4 @@ def pm(n):
 		print(x,end=", ")
 	print()
 ==
+

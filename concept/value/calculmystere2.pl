@@ -40,7 +40,7 @@ res=p
 ==
 
 
-form=@ /forms/simpletextform.html
+form=@ /form/simpletextform.html
 
 
 evaluator==
@@ -60,6 +60,7 @@ except:
         grade= False,'<div class="btn-danger"> Formule Incorrecte</div>'
 
 ==
+
 
 
 

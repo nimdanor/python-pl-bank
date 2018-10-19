@@ -3,7 +3,7 @@ author=Dominique Revuz
 name=  Pim Plus Plus
 title=  Pim  Plus Pim  # N'oubliez pas de remplir ce champs svp
 tag= def|return|list|function|join  # N'oubliez pas de remplir ce champs svp
-template=/python/0PLG/template.pl
+template=/template/pltest.pl
 
 taboo=print
 text==
@@ -63,3 +63,4 @@ def pims(n,s):
 		return s.join(['Pim']*n)
 
 ==
+

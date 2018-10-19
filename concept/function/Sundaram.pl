@@ -3,7 +3,7 @@ author=Dominique Revuz
 name= Sundaram
 title= Sundaram  # N'oubliez pas de remplir ce champs svp
 tag=def|parameters|return # N'oubliez pas de remplir ce champs svp
-template=/python/0PLG/template.pl
+template=/template/pltest.pl
 text==
 ## Crible de Sundaram
 

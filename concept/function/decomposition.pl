@@ -3,7 +3,7 @@ author=Dominique Revuz
 name=decomposition
 title= Décomposition en facteurs Premiers  # N'oubliez pas de remplir ce champs svp
 tag=join|list|def|parameters|return # N'oubliez pas de remplir ce champs svp
-template=/python/0PLG/template.pl
+template=/template/pltest.pl
 text==
 ## Décomposition en facteurs premiers
 
@@ -100,3 +100,4 @@ def decomposition(n):
 	print("*".join(ldecomposition(n)))
 
 ==
+

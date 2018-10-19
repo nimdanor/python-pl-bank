@@ -3,7 +3,7 @@ author=Dominique Revuz
 title=L'éponge Caré
 name=L'éponge Carée
 tag=function # N'oubliez pas de remplir ce champs svp
-template=/python/0PLG/template.pl
+template=/template/pltest.pl
 text==
 ## Une fonction carre ##
 Ecrivez une fonction **carre** qui retourne le carré de son paramêtre.
@@ -18,3 +18,4 @@ pltest==
 100
 >>> 
 ==
+

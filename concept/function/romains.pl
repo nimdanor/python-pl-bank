@@ -1,11 +1,10 @@
 # Copyright 2016 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz 
 name=  Romains 
-title=  Gaulois  # N'oubliez pas de remplir ce champs svp
+title=  Nombres Romains 
 tag=function|parameter|return  # N'oubliez pas de remplir ce champs svp
-template=/python/0PLG/template.pl
+extends=/template/pltest.pl
 text==
-## Nombres Romains
 Ecrire une fonction **romains** qui prend un parametre entier *n* et qui le retourne écrit avec la numération romaine :
 
 Si n < 1 ne retourne rien
@@ -87,3 +86,4 @@ def romains(n):
 	return "M"*m+ximal(c,"M","D","C")+ximal(d,"C","L","X")+ximal(u,"X","V","I")
 
 ==
+

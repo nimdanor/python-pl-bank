@@ -2,8 +2,8 @@
 author=Dominique Revuz 
 name=  Romains 
 title=  Gaulois  # N'oubliez pas de remplir ce champs svp
-tag=function|parameter|return  # N'oubliez pas de remplir ce champs svp
-template=/python/0PLG/template.pl
+tag=function|parameter|list|return  # N'oubliez pas de remplir ce champs svp
+extends=/template/pltest.pl
 text==
 En utilisant la fonction **romains** de l'exercice précédent et la liste des associations suivantes:
 
@@ -86,3 +86,4 @@ def rencode(s):
 		m += romains(d[i])
 	return m
 ==
+
