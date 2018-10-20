@@ -43,6 +43,8 @@ pltest==
 7
 >>> contient_puissance(2**3*3**4,3)
 4
+==
+pltest1==
 >>> decomposition(2**3*3**4)
 2^3*3^4
 >>> decomposition(2**3*3**4*11**3*97**2)
@@ -50,6 +52,19 @@ pltest==
 
 ==
 
+before==
+random.seed(seed)
+t=[]
+n=1
+for i in [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]:
+    if random.randint(1,4)==1:
+        e=random.randint(1,7)
+        t.append(str(i)+"^"+str(e))
+        n *= i**e        
+
+ptest2=">>> decomposition("+str(n)+")\n"+"*".join(t)
+
+==
 
 testcode==
 def estpremier(p):
