@@ -45,7 +45,7 @@ res=p
 ==
 
 
-form=@ /forms/simpletextform.html
+form=@ /form/simpletextform.html
 
 
 evaluator==
