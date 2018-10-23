@@ -13,13 +13,13 @@ pltest==
 >>> nb_pairs([2,4,5,6,77])
 3
 >>> nb_pairs([])
-[]
+0
 >>> import random #
 >>> l=[ random.randint(1,100)*2 for x in range(10)] #
 >>> nb_pairs(l) == len(l) # Tous pairs 
 True
 >>> nb_pairs([ x+1 for x in l]) # Tous impairs
-[]
+0
 ==
 
 
