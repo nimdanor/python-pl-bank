@@ -106,7 +106,15 @@ if __name__ == "__main__":
                 outstr = jinja2.Template(dic["feedback"]['failure']).render(dic)
             else:
                 outstr = '<div class="btn-danger">  Raté ! '+ str(a)+"/"+str(t)+ '</div>'
-    
+    if "try" not in dic:
+        dic["try"]=1
+    else:
+        dic["try"] += 1
+    if "noretry" in dic:
+        if dic["try"]>int(dic["noretry"]):
+            dic["text"]=" Passez à l'exercice suivant "
+            dic["form"]= ""
+        
     output(grade,outstr,dic)
 
 

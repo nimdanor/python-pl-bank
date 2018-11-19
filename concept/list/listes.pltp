@@ -20,7 +20,7 @@ Des fonctions de manipulation de liste.
 	   return s
 
 
-Pour ceux qui s'ennui les trois derniers exercices sont aléatoire et les faire du premier coup devient un chalenge.
+Pour ceux qui s'ennuient: les trois derniers exercices sont aléatoires et les faire du premier coup devient un défi.
 
 ==
 
@@ -44,3 +44,4 @@ soussuite.pl
 lireuneliste.pl
 lireunelisteint.pl
 ==
+

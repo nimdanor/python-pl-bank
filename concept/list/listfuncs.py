@@ -32,11 +32,13 @@ filtres = [("lambda x: x>0", "strictement positifs"),
 ("lambda x: x>=0", "positifs "),
 ("lambda x: (x>=0) and (x%2==0) ", "positifs et pairs"),
 ("lambda x: (x>0) and (x%2==0) ", "strictement positifs et pairs"),
+("lambda x: (x>0) and (x%2==1) ", "strictement positifs et impairs"),
 ("lambda x: (x>=0) and (x%3==0) ", "positifs et multiples de trois"),
+("lambda x: (x>=0) and (x%3!=0) ", "positifs et pas multiples de trois"),
 ("lambda x: (x>=0) and (x%7==0) ", "positifs et multiples de sept"),
 ("lambda x: x<=0", "negatifs"),
 ("lambda x: x<0", "strictement negatifs"),
-("lambda x: x<0", "strictement negatifs et pairs"),
+("lambda x: x<0 and (x%2==0)", "strictement negatifs et pairs"),
 ("lambda x: x%2==0", "pairs"),
 ("lambda x: x%3==0", "multiples de trois"),
 ("lambda x: True", ""),]
@@ -44,6 +46,7 @@ transforms= [("lambda x: x ", " "),
 ("lambda x:x*x","des carrés "),
 ("lambda x:x*x*x","des cubes "),
 ("lambda x:x*2","des doubles "),
+("lambda x:x*3","des triple "),
 ("lambda x:x//2","de la moitiée (entière) "),
 ("lambda x:-x","des opposés "),
 ]
@@ -190,6 +193,7 @@ if __name__=="__main__":
     build(d)
 
     print(d)
+
 
 
 
