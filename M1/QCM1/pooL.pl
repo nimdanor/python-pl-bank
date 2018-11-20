@@ -5,7 +5,7 @@ title= LE L
 text==
 les 5 principes essentiels de POO regroupés sous l'acronyme SOLID 
 
-Donnez une explication personnel du **L** de SOLID en quelque lignes.
+Donnez une explication personnelle du **L** de SOLID en quelque lignes.
 
 
 

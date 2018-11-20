@@ -3,19 +3,19 @@ template=/template/qcm_template.pl
 
 title= critères de succès d'un projet
 text==
-Quels sont les 3 critères de succès d'un projet informatique, cocher 3 parmi les solutions possibles
+Quels sont les 3 AXES de succès/d'échec d'un projet informatique , cocher 3 parmi les solutions possibles
 ==
+
 good==
-bonnes performances
-respect des délais
-interface utilisateur intuitive
-respect des coûts
 conformité
-code optimisé
-utilisateurs satisfaits 
+respect des délais
+respect des coûts
 ==
 
 bad==
-le lacher de pigeons
+interface utilisateur intuitive
+code optimisé
+utilisateurs satisfaits 
+bonnes performances
 ==
 

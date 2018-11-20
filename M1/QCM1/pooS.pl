@@ -3,9 +3,9 @@ template=/template/qcm_template.pl
 
 title= LE D
 text==
-les 5 principes essentiels de POO regroupés sous l'acronyme SOLID 
+les 5 principes essentiels de POO regroupés sous l'acronyme **S.O.L.I.D.** 
 
-Donnez une explication personnel du **D** de SOLID en quelque lignes.
+Donnez une explication personnelle du **D** de SOLID en une seule Phrase.
 
 
 

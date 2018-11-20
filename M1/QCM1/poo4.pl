@@ -8,10 +8,12 @@ En UML, la cardinalité doit s'indiquer sur les liens (plusieurs réponses possi
 ==
 good==
 la relation d'association
-la relation de dépendance 
+la relation d'agrégation 
+la relation de composition
 ==
 
 bad==
+la relation de dépendance 
 la relation d'héritage
 la relation d'implémentation
 ==

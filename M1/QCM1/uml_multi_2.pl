@@ -2,8 +2,7 @@
 template=/template/qcm_template.pl
 title=Exercice 2
 text==
-Veuillez indiquer le schéma qui définie une relation 
-Composition
+Veuillez indiquer le schéma qui définie une relation de Composition
 ==
 nb=4
 nbtrues=1
