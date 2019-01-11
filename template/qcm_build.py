@@ -41,8 +41,10 @@ if bad.endswith("\n\n"):
     bad=bad[0:-1]
     print(" trailing \n",file=sys.stderr)
 
-lg= good.split("\n")
-lb= bad.split("\n")
+if "delimiter" not in globals():
+	delimiter="\n"
+lg= good.split(delimiter)
+lb= bad.split(delimiter)
 
 goodpairs=[]
 badpairs=[]
