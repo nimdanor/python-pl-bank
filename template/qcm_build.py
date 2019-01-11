@@ -1,5 +1,6 @@
 
-import random,sys
+import random
+import sys
 
 def testdef(balise):
     # type: (str) ->
@@ -70,5 +71,6 @@ form = """<div class="input-group"><table>"""
 for i,(x,b) in enumerate(pairs):
     form += """<TR><td><input id="form_answer_"""+str(i)+"""\"  type="checkbox"  placeholder="" required>"""+x+"</td></TR>"
 form += "</table></div>"
+
 
 

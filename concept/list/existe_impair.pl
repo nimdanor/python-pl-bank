@@ -5,7 +5,7 @@ extends=/template/pltest.pl
 text==
 
 Ecrire une fonction **exist_impairs** qui prend une liste en paramêtre 
-et qui retourne si il existe un entier impair dans la liste.
+et qui retourne True si il existe un entier impair dans la liste.
 
 Remarque: Pouvez vous utiliser tous_pairs ?
 ==

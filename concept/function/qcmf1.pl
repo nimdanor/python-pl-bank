@@ -39,8 +39,9 @@ text=""" Qu'affiche le programme suivant :
 
     {}""".format(chaine)
 
-good=totototo
-bad="""tototiti
+good="totototo"
+bad="""
+tototiti
 tititoto
 toto
 n'affiche rien

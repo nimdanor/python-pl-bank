@@ -11,7 +11,8 @@ Remarque: (a, b) est un tuple et [a, b] une liste.
 ==
 
 pltest==
->>> info_list == info_list
+>>> info_list == info_list#
+True
 >>> info_list([2,4,5,6,77])
 (3, 2)
 >>> info_list([])

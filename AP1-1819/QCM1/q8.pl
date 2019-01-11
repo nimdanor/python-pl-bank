@@ -6,12 +6,13 @@ title= 8 pommes
 
 mybuild==
 import random
-chaine= random.choice(['pomme','banana','banane','poire','ananas'])
+chaine= random.choice(['pommes','bananas','bananes','poires','ananas'])
 entier= random.randint(5,8)
 
 text=""" Qu'affiche le programme suivant :
 
     print(len('{}')*{})""".format(chaine,entier)
+title = """{} {}""".format(entier,chaine)
 
 good=str(len(chaine)*entier)
 bad=chaine*entier
@@ -34,4 +35,5 @@ bad==
 ==
 
 feedback=show
+
 
