@@ -4,6 +4,7 @@ name=decomposition
 title= Décomposition en facteurs Premiers  # N'oubliez pas de remplir ce champs svp
 tag=join|list|def|parameters|return # N'oubliez pas de remplir ce champs svp
 template=/template/pltest.pl
+piste=rouge
 text==
 ## Décomposition en facteurs premiers
 

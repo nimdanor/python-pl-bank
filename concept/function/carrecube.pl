@@ -1,8 +1,7 @@
 # Copyright 2016 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz 
-name=  Carre Cube 
 title= Carre Cube
-
+piste=verte
 tag= def|return  # N'oubliez pas de remplir ce champs svp
 template=/template/pltest.pl
 

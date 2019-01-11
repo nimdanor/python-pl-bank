@@ -1,8 +1,8 @@
 template=/template/pltest.pl
-title= Liste and Fun (ction)
-name= Une fonction 
+title= Liste and Fun(ction)
 
 tag=list|function|dict
+piste=rouge
 text==
 
 # Caractères

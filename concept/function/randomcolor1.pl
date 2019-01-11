@@ -5,6 +5,7 @@ title=randomcolor1.pl
 tag=list|function|random
 template=/template/pltest.pl
 tag=function|random|list
+piste=verte
 text==
 
 # Couleur aléatoire
@@ -32,14 +33,14 @@ def randomcolor(cl):
 pltest==
 >>> randomcolor(['yellow']) # Ne marche pas avec un seul élement dans la liste
 'yellow'
->>> colorlist=['blue','red','white','black']
+>>> colorlist=['blue','red','white','black'] #
 >>> randomcolor(colorlist) in colorlist # usage normal 
 True
 >>> not randomcolor(colorlist) in colorlist # c'est aléatoire mais pas dans la liste 
 False
 >>> vide=[]
 >>> randomcolor(vide)# ne renvoie rien 
->>> ll =[u for u in range(1,10000)] 
+>>> ll =[u for u in range(1,10000)] #
 >>> randomcolor(ll) == randomcolor(ll) and randomcolor(ll) == randomcolor(ll) # votre fonction n'est pas aleatoire
 False
 ==

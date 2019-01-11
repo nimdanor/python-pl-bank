@@ -3,7 +3,8 @@ author=Dominique Revuz
 name=writebase.pl
 title=Write In Base  # N'oubliez pas de remplir ce champs svp
 tag=tag  # N'oubliez pas de remplir ce champs svp
-template=/python/0PLG/template.pl
+template=/template/pltest.pl
+piste=rouge
 text==
 
 # Write In Base
@@ -36,6 +37,8 @@ Donc :
 
 
 pltest==
+    >>> writeinbase(35,3799)
+    Erreur base hors de l'interval [2,36]
     >>> writeinbase(100,2)
     '1100100'
     >>> writeinbase(64,2)
@@ -48,8 +51,6 @@ pltest==
     'P'
     >>> writeinbase(35,36)
     'Z'
-    >>> writeinbase(35,3799)
-    Erreur base hors de l'interval [2,36]
 ==
 
 testcode==

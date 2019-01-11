@@ -1,7 +1,8 @@
 # Copyright 2016 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz 
 title=Calcul des sous ensembles
-tag=root # N'oubliez pas de remplir ce champs svp
+tag=set
+piste=rouge
 template=/template/pltest.pl
 
 ce pl Ne fonctionne pas

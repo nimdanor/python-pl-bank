@@ -4,6 +4,7 @@ title=L'éponge Caré
 name=L'éponge Carée
 tag=function # N'oubliez pas de remplir ce champs svp
 template=/template/pltest.pl
+piste=verte
 text==
 ## Une fonction carre ##
 Ecrivez une fonction **carre** qui retourne le carré de son paramêtre.

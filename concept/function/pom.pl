@@ -1,6 +1,6 @@
 # Copyright 2016 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz 
-name=  pom.pl
+piste=verte
 title=  Pom Pom Pom Pom  # N'oubliez pas de remplir ce champs svp
 tag=function|parameter  # N'oubliez pas de remplir ce champs svp
 template=/template/pltest.pl

@@ -1,6 +1,6 @@
 # Copyright 2016 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz 
-name=  Romains 
+piste=rouge
 title=  Nombres Romains 
 tag=function|parameter|return  # N'oubliez pas de remplir ce champs svp
 extends=/template/pltest.pl

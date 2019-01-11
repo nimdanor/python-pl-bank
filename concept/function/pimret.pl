@@ -1,6 +1,6 @@
 # Copyright 2016 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz 
-name=  Pim Plus Plus
+piste=verte
 title=  Pim  Plus Pim  # N'oubliez pas de remplir ce champs svp
 tag= def|return|list|function|join  # N'oubliez pas de remplir ce champs svp
 template=/template/pltest.pl

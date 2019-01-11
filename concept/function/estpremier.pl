@@ -4,6 +4,7 @@ name= Est Premier
 title= Est Premier   # N'oubliez pas de remplir ce champs svp
 tag=def|parameters|return # N'oubliez pas de remplir ce champs svp
 template=/template/pltest.pl
+piste=verte
 text==
 
 
@@ -28,8 +29,6 @@ Exemples :
 
 ==
 
-# Choisir pltest ou soluce ou expectedoutput
-
 pltest==
 	>>> estpremier(2)
 	True
@@ -39,18 +38,18 @@ pltest==
 	True
 	>>> estpremier(65537)
 	True
-	>>> from random import randint#
-	>>> x=randint(978,6000)
-	>>> estpremier(x*x)
-	False
+	>>> [ estpremier(10**n+3) for n in range(3,12) ] # Des grands nombres premiers 
+	[False, False, True, True, False, False, False, False, True]
 ==
 
 
 testcode==
 def estpremier(p):
-	for i in range(2,p//2):
-		if p % i == 0:
-			return False
-	return True
+   i=2
+   while i*i < p:
+      if p % i == 0:
+         return False
+      i=i+1
+   return True
 ==
 

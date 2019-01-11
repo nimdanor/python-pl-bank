@@ -4,6 +4,7 @@ name=histogramme de notes
 title=Histogramme des Notes 
 tag=function|list|branching
 template=/template/pltest.pl
+piste=rouge
 text==
 Lire sur une première ligne le nombre de notes N, puis sur la ligne suivante les N notes en question.
 

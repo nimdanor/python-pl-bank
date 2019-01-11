@@ -1,7 +1,8 @@
 # Copyright 2016 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz 
-title= Fibo
-tag=root # N'oubliez pas de remplir ce champs svp
+title= Fibonnacci Récursif
+piste=verte
+tag=recursif # N'oubliez pas de remplir ce champs svp
 extends=/template/pltest.pl
 text==
 
@@ -10,8 +11,7 @@ Ecrire une fonction **F** à un parametre entier qui vérifie la définition sui
 	si n < 2 alors F=1
 	sinon alors F=F(n-2)+F(n-1)
 
-
-
+Mise en jambe.
 ==
 
 
@@ -24,7 +24,6 @@ pltest==
 89
 >>> F(5)
 8
->>>
 ==
 
 testcode==

@@ -4,6 +4,7 @@ name= Jumeaux
 title= Nombres Premiers Jumeaux  # N'oubliez pas de remplir ce champs svp
 tag=def|parameters|return # N'oubliez pas de remplir ce champs svp
 template=/template/pltest.pl
+piste=verte
 text==
 
 Deux nombres premiers sont dits **jumeaux** s'ils ne diffèrent que de 2.

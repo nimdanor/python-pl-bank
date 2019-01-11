@@ -2,6 +2,7 @@
 author=Dominique Revuz 
 title= Puissances Max
 template=/template/pltest.pl
+piste=rouge
 text==
 
 Ecrire une fonction **pm** qui recoit un argument entier **n** 

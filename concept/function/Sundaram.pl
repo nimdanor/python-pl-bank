@@ -4,6 +4,7 @@ name= Sundaram
 title= Sundaram  # N'oubliez pas de remplir ce champs svp
 tag=def|parameters|return # N'oubliez pas de remplir ce champs svp
 template=/template/pltest.pl
+piste=rouge
 text==
 ## Crible de Sundaram
 

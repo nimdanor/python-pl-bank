@@ -1,5 +1,6 @@
 author=dr
 title=Fizz Buzz 
+piste=verte
 extends=/template/pltest.pl
 
 text==

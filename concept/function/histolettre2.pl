@@ -1,7 +1,6 @@
 extends=/template/pltest.pl
-title=Simple 3 
-name= Une fonction 
-
+title= Histogramme again
+piste=rouge
 tag=list|function|dict
 text==
 

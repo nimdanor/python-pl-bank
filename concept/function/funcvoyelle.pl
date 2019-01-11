@@ -2,6 +2,7 @@
 author=Dominique Revuz 
 name= Function Voyelles
 title=None
+piste=verte
 template=/template/pltest.pl
 text==
 # Appartient

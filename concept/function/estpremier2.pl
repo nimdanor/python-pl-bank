@@ -1,9 +1,9 @@
 # Copyright 2016 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz 
-name= Est Premier
 title= Premier Suivant   # N'oubliez pas de remplir ce champs svp
 tag=def|parameters|return # N'oubliez pas de remplir ce champs svp
 template=/template/pltest.pl
+piste=verte
 text==
 
 
