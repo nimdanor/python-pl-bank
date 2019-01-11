@@ -37,6 +37,11 @@ data-toggle="collapse" data-target="#demo{{feedback.name}}{{num}}">
 </div>
 </div>
 {% endif %}
+{% if globalfeedback != "" %}
+<div style="border:1px white;padding:1px;margin:1px;background-color:LightBlue;border-radius:4px;">
+{{ globalfeedback }}
+</div>
+{% endif %}
 {% if type=="success" %}
 <div style="border:1px white;padding:1px;margin:1px;background-color:LightGreen;border-radius:4px;">
 <button type="button" class="btn btn-block btn-success"
