@@ -33,6 +33,8 @@ if "mybuild" in globals():
         exec(mybuild,globals())
     except Exception as ee:
         print("Problem dans mybuild",str(ee),file=sys.stderr)
+if "delimiter" not in globals():
+    delimiter="\n"
 
 if good.endswith("\n\n"):
     good=good[0:-1]
@@ -42,8 +44,8 @@ if bad.endswith("\n\n"):
     bad=bad[0:-1]
     print(" trailing \n",file=sys.stderr)
 
-lg= good.split("\n")
-lb= bad.split("\n")
+lg= good.split(delimiter)
+lb= bad.split(delimiter)
 
 goodpairs=[]
 badpairs=[]
