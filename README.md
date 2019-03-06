@@ -5,6 +5,12 @@
 
 Repository des éléments PL sur Python
 
+# Version en ligne
+
+Vous avez une version en ligne de PremierLangage dans le module éditor vous avez un menu git qui vous permet de récupérer ce repository dans vos exercices. En indiquant **https://github.com/nimdanor/python-pl-bank/** comme repository.
+
+# Version locale
+
 ## Installation de pl 
 si ce n'est pas fait il faut installer le projet pl (premierlangage). 
 
@@ -14,6 +20,8 @@ Version stable (acces anonyme):
 
 
 Lire et réaliser les explications et commandes du fichier **install.md**
+
+
 
 ## localisation et download  de python-pl-bank
 
