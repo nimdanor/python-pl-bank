@@ -44,7 +44,7 @@ def randomfloat(n):
 
 def randomtuple(n):
     l=[]
-    t=" un tuple contenant :\n"
+    t=" un tuple contenant dans l'ordre :\n"
     for x in range(random.randint(2,5)):
         v,s = randomvalue(n-1)
         l.append(v)
@@ -54,7 +54,7 @@ def randomtuple(n):
 
 def randomlist(n):
     l=[]
-    t=" une liste contenant :\n"
+    t=" une liste contenant dans l'ordre :\n"
     for x in range(random.randint(2,5)):
         v,s = randomvalue(n-1)
         l.append(v)
